@@ -1,14 +1,54 @@
 <ion-header>
   <ion-toolbar>
     <ion-title class="ion-text-center">Profil</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="openSettings()">
+        <ion-icon name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-<ion-item>
-  <ion-label class="ion-text-wrap">
-    Bienvenue dans l'espace membre
-    Connectez-vous pour accéder à votre profil.
-  </ion-label>
-</ion-item>
+<ion-content class="ion-padding">
+
+<div *ngIf="connected">
+
+    <div class="ion-padding">
+        <ion-button color="danger" expand="block" shape="round" fill="solid" (click)="logout()">Déconnexion</ion-button>
+      </div>
+
+</div>
+
+
+<div *ngIf="!connected">
+
+  <ion-item>
+    <ion-label class="ion-text-wrap">
+      Bienvenue dans l'espace membre
+      Connectez-vous pour accéder à votre profil.
+    </ion-label>
+  </ion-item>
+
+  <div class="logo">
+    <ion-icon name="game-controller-outline"></ion-icon>
+  </div>
+
+  <ion-item lines="none" color="primary">
+    <ion-label color="light"><b>Email</b></ion-label>
+    <ion-input color="light" type="email" placeholder="Adresse email" [(ngModel)]="dataUser.email"></ion-input>
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-label color="light"><b>Mot de passe</b></ion-label>
+    <ion-input color="light" type="password" placeholder="Mot de passe" [(ngModel)]="dataUser.password"></ion-input>
+  </ion-item>
+  
+  <br>
+
+  <ion-button color="secondary" expand="block" shape="round" fill="outline" (click)="login()">Connexion</ion-button>
+
+  <br>
+
+</div>
+
 </ion-content>
