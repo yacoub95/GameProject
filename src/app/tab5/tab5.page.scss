@@ -1,6 +1,4 @@
-ion-content {
-    --ion-background-color: #34495e;
-}
+
 
 ion-item {
     --ion-background-color: transparent!important;
@@ -20,10 +18,10 @@ ion-item {
 
 .logo {
     position: relative;
-    height: 200px;
+    height: 100px;
 }
 .logo ion-icon{
-    font-size: 9em;
+    font-size: 3em;
     position: absolute;
     top: 50%;
     left: 50%;
