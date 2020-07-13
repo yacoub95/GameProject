@@ -12,6 +12,20 @@
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
+  <!-- Image de présentation-->
   <ion-img src = "https://cdn.wccftech.com/wp-content/uploads/2019/02/apex-legends-keyart.jpg"></ion-img>
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  
+  <!-- Carte d'actualités-->
+  <ion-card *ngFor = "let article of data?.articles">
+    <img [src]="article.urlToImage"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{article.title}}
+        </ion-card-title>
+      <p>
+        {{article.description}}
+      </p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+

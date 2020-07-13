@@ -1,0 +1,61 @@
+[33mcommit 0e86b7ae22e77393c81d830a55d7ea4f0cb2c571[m[33m ([m[1;36mHEAD -> [m[1;32mnewMaster[m[33m, [m[1;31morigin/newMaster[m[33m)[m
+Author: Yacoub Mesbahi <yacoubmesbahi.professionnel@gmail.com>
+Date:   Mon Jul 13 14:27:11 2020 +0200
+
+    redesign complet de la page profil avec le formulaire de connexion, avec ajout du bouton mot de passe oublié, des boutons de connexion avec facebook et google (non fonctionnels) et le bouton de redirection vers la page inscription (non fonctionnel)
+
+[33mcommit 96d52d1bddbf85a466ff763217e8e4aff10440ad[m
+Author: Yacoub Mesbahi <yacoubmesbahi.professionnel@gmail.com>
+Date:   Sun Jul 12 21:23:08 2020 +0200
+
+    new version avec new branch (newMaster)
+
+[33mcommit 0aa92912543d0ab6a5d2b00e5710b8e82c3eb445[m
+Author: Yacoub Mesbahi <yacoubmesbahi.professionnel@gmail.com>
+Date:   Sun Jul 12 19:20:00 2020 +0200
+
+    page profil avec connexion (quelques bugs) et ajout de la page settings pour se deconnecter etc, firebase authentiication fonctionnel mais avec quelques bugs encore
+
+[33mcommit 9acffd88cccd06ad04883767a1ea09452c2d41b9[m
+Author: Yacoub Mesbahi <yacoubmesbahi.professionnel@gmail.com>
+Date:   Sun Jul 12 17:39:50 2020 +0200
+
+    initialisation du plugin Firebase, changement du titre de la page news et profil, ajout d'un label avec texte dans la page profil
+
+[33mcommit d59305700fc9498e2471bc18818ddbd7eb04cfea[m
+Author: Sidane Alp <sidanealp0@gmail.com>
+Date:   Sun Jul 12 16:33:37 2020 +0200
+
+    Ajout d'une nouvelle branche Accueil, j'y ai modifié le titre d'Accueil et aussi j'ai mis une image de présentation du jeu Apex
+
+[33mcommit e6fe308907d93638bbfa500873876b7bd9a0f8da[m
+Merge: 9543177 cd43f5b
+Author: Sidane Alp <sidanealp0@gmail.com>
+Date:   Sun Jul 12 15:54:28 2020 +0200
+
+    Merge branch 'master' of https://github.com/yacoub95/GameProject
+
+[33mcommit cd43f5bc2bc16032d40ee97784610fc987ae68bf[m
+Author: Yacoub Mesbahi <yacoubmesbahi.professionnel@gmail.com>
+Date:   Sun Jul 12 15:48:04 2020 +0200
+
+    ajout des de 2 tabs et des icons (titres ecrits retires)
+
+[33mcommit 9543177850a7bd26ef7a6b5c913cb9b684460951[m
+Merge: d9ee92d af61853
+Author: Sidane Alp <sidanealp0@gmail.com>
+Date:   Sat Jul 11 23:41:28 2020 +0200
+
+    Merge branch 'master' of https://github.com/yacoub95/GameProject
+
+[33mcommit d9ee92d85261be8baf500fe687cfe35246800a60[m
+Author: Sidane Alp <sidanealp0@gmail.com>
+Date:   Sat Jul 11 23:18:11 2020 +0200
+
+    lol
+
+[33mcommit af6185389e8f6bf87e8743d90b53493672db399d[m
+Author: Yacoub Mesbahi <yacoubmesbahi.professionnel@gmail.com>
+Date:   Sat Jul 11 22:51:29 2020 +0200
+
+    initial commit
