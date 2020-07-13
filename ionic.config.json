@@ -1,5 +1,7 @@
 {
   "name": "GameProject",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
