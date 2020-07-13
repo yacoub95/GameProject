@@ -16,7 +16,7 @@ export class Tab1Page {
   }
 
   getData(){
-    let url = 'http://newsapi.org/v2/everything?q=apex%20legends%20&language=fr&from=2020-06-13&sortBy=publishedAt&apiKey=ceb47a2155124c0cb9d11e95e6b094fe'
+    let url = 'http://newsapi.org/v2/everything?q=apex%20legends%http://newsapi.org/v2/everything?q=apex%20legends%20%20-Ubisoft%20-Dealabs%20-Androidpit%20-Ninjala&language=fr&from=2020-06-13&sortBy=publishedAt&apiKey=ceb47a2155124c0cb9d11e95e6b094fe20&language=fr&from=2020-06-13&sortBy=publishedAt&apiKey=ceb47a2155124c0cb9d11e95e6b094fe'
     this.http.get(url).subscribe(data => {
       this.data = data;
     });
