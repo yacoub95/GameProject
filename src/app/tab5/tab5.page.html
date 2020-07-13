@@ -9,7 +9,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content>
 
 <div *ngIf="connected">
 
@@ -23,32 +23,63 @@
 <div *ngIf="!connected">
 
   <ion-item>
-    <ion-label class="ion-text-wrap">
-      Bienvenue dans l'espace membre !
-      Connectez-vous pour accéder à votre profil.
+    <ion-label>
+      <h2><b>Bienvenue dans l'espace membre</b></h2>
+      <h5>Connectez-vous pour accéder à votre profil.</h5>
     </ion-label>
+    <ion-icon name="game-controller-outline" color="dark"></ion-icon>
   </ion-item>
 
-  <div class="logo">
-    <ion-icon name="game-controller-outline"></ion-icon>
+<div class="padding">
+  <div class="padding2">
+  <ion-item lines="none" >
+    
+    <ion-input type="email" placeholder="Adresse email" [(ngModel)]="dataUser.email"></ion-input>
+  </ion-item>
   </div>
 
-  <ion-item lines="none" color="primary">
-    <ion-label color="light"><b>Email</b></ion-label>
-    <ion-input color="light" type="email" placeholder="Adresse email" [(ngModel)]="dataUser.email"></ion-input>
+  <br>
+
+  <ion-item lines="none" >
+    
+    <ion-input type="password" placeholder="Mot de passe" [(ngModel)]="dataUser.password"></ion-input>
   </ion-item>
 
   <ion-item lines="none">
-    <ion-label color="light"><b>Mot de passe</b></ion-label>
-    <ion-input color="light" type="password" placeholder="Mot de passe" [(ngModel)]="dataUser.password"></ion-input>
+    <ion-button color="dark" slot="end" fill="clear">Mot de passe oublié ?</ion-button>
   </ion-item>
+
+  <br>
+
+  <ion-button color="tertiary" expand="block" (click)="login()">Connexion</ion-button>
+
+  <br>
+
+  <ion-item lines="none">
+    <ion-label class="ion-text-center">Ou connectez-vous avec</ion-label>
+  </ion-item>
+
+  <div class="flex">
+    <ion-button color="primary">
+      <ion-icon slot="start" name="logo-facebook"></ion-icon>
+      Facebook
+    </ion-button>
+    <ion-button color="danger">
+      <ion-icon slot="start" name="logo-google"></ion-icon>
+      Google
+    </ion-button>
+  </div>
+
   
-  <br>
-
-  <ion-button color="secondary" expand="block" shape="round" fill="outline" (click)="login()">Connexion</ion-button>
-
-  <br>
-
+    
 </div>
+<ion-item lines="none">
+      <ion-label >
+        <h5 class="sign">Vous n'avez pas de compte ?</h5>
+      </ion-label>
+      <ion-button color="medium" slot="end" fill="clear">Inscrivez-vous</ion-button>
+    </ion-item>
+</div>
+
 
 </ion-content>
