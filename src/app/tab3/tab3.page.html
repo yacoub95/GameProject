@@ -9,27 +9,12 @@
 <ion-content>
   <ion-slides [options] = "config">
     <!-- Copier le modèle autant de fois qu'il y ait de vidéo -->
-    <ion-slide (click) = "videomodal()">
-      <ion-card>
-        <img src="assets/chien.jpg" alt="">
+    <ion-slide *ngFor = "let video of items">
+      <ion-card (click) = "videomodal(video.url)">
+        <ion-img [src]="video.images" alt=""></ion-img>
       </ion-card>
     </ion-slide>
     <!-- Fin du modèle-->
-    <ion-slide>
-      <ion-card (click) = "videomodal()">
-        <img src="assets/chien1.jpg" alt="">
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card (click) = "videomodal()">
-        <img src="assets/chien2.jpg" alt="">
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card (click) = "videomodal()">
-        <img src="https://images2.minutemediacdn.com/image/upload/c_crop,h_2788,w_4960,x_0,y_255/f_auto,q_auto,w_1100/v1554918537/shape/mentalfloss/istock-488657289.jpg" alt="">
-      </ion-card>
-    </ion-slide>
   </ion-slides>
 
 </ion-content>
