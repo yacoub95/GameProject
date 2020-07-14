@@ -3,6 +3,7 @@
     <ion-title class="ion-text-center">
       News écrits par nos soins
     </ion-title>
+    
   </ion-toolbar>
 </ion-header>
 
@@ -13,5 +14,13 @@
     </ion-toolbar>
   </ion-header>-->
 
+  <div *ngIf="boss">
+    <ion-buttons slot="end">
+      <ion-button color="dark" (click)="openSettings()">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+     </ion-buttons>
+     <h1>Bosss</h1>
+  </div>
   
 </ion-content>
