@@ -6,6 +6,7 @@ import { ToastController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ModalController } from '@ionic/angular';
 import { SettingsPage } from '../settings/settings.page';
+import { RegisterPage} from '../register/register.page';
 
 @Component({
   selector: 'app-tab5',

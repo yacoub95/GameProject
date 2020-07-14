@@ -34,7 +34,7 @@
   <div class="padding2">
   <ion-item lines="none" >
     
-    <ion-input type="email" placeholder="Adresse email" [(ngModel)]="dataUser.email"></ion-input>
+    <ion-input type="email" placeholder="Adresse email" [(ngModel)]="dataUser.email" autocomplete></ion-input>
   </ion-item>
   </div>
 
@@ -42,7 +42,7 @@
 
   <ion-item lines="none" >
     
-    <ion-input type="password" placeholder="Mot de passe" [(ngModel)]="dataUser.password"></ion-input>
+    <ion-input type="password" placeholder="Mot de passe" [(ngModel)]="dataUser.password" clear-input ></ion-input>
   </ion-item>
 
   <ion-item lines="none">
@@ -76,7 +76,7 @@
     <ion-label >
       <h5 class="sign">Vous n'avez pas de compte ?</h5>
     </ion-label>
-    <ion-button color="medium" slot="end" fill="clear">Inscrivez-vous</ion-button>
+    <ion-button color="medium" slot="end" fill="clear" routerLink="/register">Inscrivez-vous</ion-button>
   </ion-item>
 </div>
 
