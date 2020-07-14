@@ -1,20 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Video
+      Videos
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-text><h1 align = "center">Présentation du jeu</h1></ion-text>
+  <!-- Cartes vidéo -->
   <ion-slides [options] = "config">
-    <!-- Copier le modèle autant de fois qu'il y ait de vidéo -->
     <ion-slide *ngFor = "let video of items">
       <ion-card (click) = "videomodal(video.url)">
         <ion-img [src]="video.images" alt=""></ion-img>
       </ion-card>
     </ion-slide>
-    <!-- Fin du modèle-->
   </ion-slides>
+    <!-- Fin du modèle-->
+  <ion-text><h1 align = "center">Skills</h1></ion-text>
+  <ion-slides [options] = "config">
+    <ion-slide *ngFor = "let video of items1">
+      <ion-card (click) = "videomodal(video.url)">
+        <ion-img [src]="video.images" alt=""></ion-img>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
 
 </ion-content>

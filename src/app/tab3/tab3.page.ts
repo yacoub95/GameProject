@@ -12,6 +12,8 @@ export class Tab3Page implements OnInit {
 
   constructor(private modalController : ModalController, private videolabService : VideolabService) {}
   items = [];
+  items1 = [];
+  items2 = [];
   config = {
     spaceBetween : 0,
     centeredSlides : true,
@@ -31,6 +33,10 @@ export class Tab3Page implements OnInit {
   }
   ngOnInit(){
     this.items = this.videolabService.getvideos();
+    this.items1 = this.videolabService.getvideos1();
+    this.items2 = this.videolabService.getvideos2();
     console.log(this.items);
+    console.log(this.items1);
+    console.log(this.items2);
   }
 }
