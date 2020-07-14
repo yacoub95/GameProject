@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ModalController} from '@ionic/angular'
+import { VideopopupPage } from '../videopopup/videopopup.page';
 
 @Component({
   selector: 'app-tab3',
@@ -7,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  constructor(private modalController : ModalController) {}
 
   config = {
     spaceBetween : 0,
@@ -16,5 +18,11 @@ export class Tab3Page {
     loop : true,
     autplay : true
   }; 
-
+  async videomodal() {
+    const modal = this.modalController.create({
+      component : VideopopupPage, 
+      cssClass : 'my-modal-css'
+    });
+    return (await modal).present();
+  }
 }
