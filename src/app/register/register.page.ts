@@ -44,4 +44,31 @@ export class RegisterPage implements OnInit {
     toast.present();
   }
 
+  async GoodSignUp() {
+    const toast = await this.toastController.create({
+      message: 'Bravo, vous êtes inscrit !',
+      duration: 2000,
+      position: 'top'
+    });
+    toast.present();
+  }
+
+  signUp() {
+    this.afAuth.createUserWithEmailAndPassword(this.dataUser.email, this.dataUser.password)
+    .then(auth => {
+      console.log('utilisateur connecté');
+      this.GoodSignUp();
+    })
+    .catch(err => {
+      console.log('Erreur: ' + err);
+      this.errorMail();
+    });
+    this.dataUser = {
+      email: '',
+      password: '',
+      username:'',
+      game:''
+    };
+  }
+
 }
