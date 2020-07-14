@@ -9,4 +9,12 @@ export class Tab3Page {
 
   constructor() {}
 
+  config = {
+    spaceBetween : 0,
+    centeredSlides : true,
+    slidesPerView: 1.4,
+    loop : true,
+    autplay : true
+  }; 
+
 }
