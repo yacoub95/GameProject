@@ -8,7 +8,7 @@
 
 <ion-content>
   <ion-slides [options] = "config">
-    <!-- Copier le modèle autant de fois qu'il y ait de vidéo -->
+    <!-- Défilé des vidéos -->
     <ion-slide *ngFor = "let video of items">
       <ion-card (click) = "videomodal(video.url)">
         <ion-img [src]="video.images" alt=""></ion-img>

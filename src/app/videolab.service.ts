@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 export class VideolabService {
     
   private videoData = [
-    {url : 'https://www.youtube.com/embed/P9bqkJHsf7o', images : '/assets/chien.jpg'},
     {url : 'https://www.youtube.com/embed/P9bqkJHsf7o', images : '/assets/chien1.jpg'},
+    {url : 'https://www.youtube.com/embed/WGNvyaRsGw0', images : '/assets/chien.jpg'},
     {url : 'https://www.youtube.com/embed/P9bqkJHsf7o', images : '/assets/chien2.jpg'}
   ];
 
