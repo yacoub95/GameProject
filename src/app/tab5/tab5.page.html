@@ -14,12 +14,18 @@
 <div *ngIf="connected">
 
     <div class="ion-padding">
-        <ion-button color="danger" expand="block" shape="round" fill="solid" (click)="logout()">Déconnexion</ion-button>
-      </div>
-
+      <ion-button color="danger" expand="block" shape="round" fill="solid" (click)="logout()">Déconnexion</ion-button>
+    </div>
+  <div *ngIf="boss">
+    <ion-item>
+      <h1>T vraiment un boss !</h1>
+    </ion-item>
+  </div>
 </div>
 
 
+
+<!--Si l'utilisateur n'est pas connecté, on affiche le formulaire de connexion-->
 <div *ngIf="!connected">
 
   <ion-item>
