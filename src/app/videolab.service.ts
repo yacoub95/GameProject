@@ -11,9 +11,7 @@ export class VideolabService {
     {url : 'https://www.youtube.com/watch?v=oQtHENM_GZU', images : 'https://img.youtube.com/vi/oQtHENM_GZU/mqdefault.jpg'},
     {url : 'https://www.youtube.com/watch?v=_oHJUcc7INs', images : 'https://img.youtube.com/vi/_oHJUcc7INs/mqdefault.jpg'},
     {url : 'https://www.youtube.com/watch?v=_7eM9Msap7T4', images : 'https://img.youtube.com/vi/7eM9Msap7T4/mqdefault.jpg'},
-    {url : 'https://www.youtube.com/watch?v=QzfsGxrCD4o', images : 'https://img.youtube.com/vi/QzfsGxrCD4o/mqdefault.jpg'},
-    {url : 'https://www.youtube.com/watch?v=lwp429eqER4', images : 'https://img.youtube.com/vi/lwp429eqER4/mqdefault.jpg'}
-
+    {url : 'https://www.youtube.com/watch?v=NmFXlijfvuc', images : 'https://img.youtube.com/vi/NmFXlijfvuc/mqdefault.jpg'}
   ];
 
   private videoData1 = [
@@ -24,8 +22,10 @@ export class VideolabService {
     {url : 'https://www.youtube.com/embed/TYXFd4kwiTs', images : 'https://img.youtube.com/vi/TYXFd4kwiTs/mqdefault.jpg'},
     {url : 'https://www.youtube.com/embed/RVWdekCRHVE', images : 'https://img.youtube.com/vi/RVWdekCRHVE/mqdefault.jpg'},
     {url : 'https://www.youtube.com/embed/mu2KIt3ERMs', images : 'https://img.youtube.com/vi/mu2KIt3ERMs/mqdefault.jpg'},
-    {url : 'https://www.youtube.com/embed/XzHMtm0mJVQ', images : 'https://img.youtube.com/vi/XzHMtm0mJVQ/mqdefault.jpg'}
-  ]
+    {url : 'https://www.youtube.com/embed/UUuIWXhJOfk', images : 'https://img.youtube.com/vi/UUuIWXhJOfk/mqdefault.jpg'},
+    {url : 'https://www.youtube.com/embed/lWDrQSkugRw', images : 'https://img.youtube.com/vi/lWDrQSkugRw/mqdefault.jpg'},
+    {url : 'https://www.youtube.com/embed/8sENfMrwfbI', images : 'https://img.youtube.com/vi/8sENfMrwfbI/mqdefault.jpg'}
+    ]
   private videoData2 = [
     {url : 'https://www.youtube.com/embed/7Vn1ftGHOVo', images : 'https://img.youtube.com/vi/7Vn1ftGHOVo/mqdefault.jpg'},
     {url : 'https://www.youtube.com/embed/XzHMtm0mJVQ', images : 'https://img.youtube.com/vi/XzHMtm0mJVQ/mqdefault.jpg'},
@@ -37,7 +37,7 @@ export class VideolabService {
     {url : 'https://www.youtube.com/embed/ZlJBbVAIItA', images : 'https://img.youtube.com/vi/ZlJBbVAIItA/mqdefault.jpg'},
     {url : 'https://www.youtube.com/embed/IcSUBUef8AI', images : 'https://img.youtube.com/vi/IcSUBUef8AI/mqdefault.jpg'},
     {url : 'https://www.youtube.com/embed/iTGNebTk-QU', images : 'https://img.youtube.com/vi/iTGNebTk-QU/mqdefault.jpg'},
-    {url : 'https://www.youtube.com/embed/IYiuavb0tS0', images : 'https://img.youtube.com/vi/IYiuavb0tS0/mqdefault.jpg'},
+    {url : 'https://www.youtube.com/embed/IYiuavb0tS0', images : 'https://img.youtube.com/vi/IYiuavb0tS0/mqdefault.jpg'}
     //{url : 'https://www.youtube.com/embed/lYf7TZY2n1k', images : 'https://img.youtube.com/vi/lYf7TZY2n1k/mqdefault.jpg'},
   ]
 

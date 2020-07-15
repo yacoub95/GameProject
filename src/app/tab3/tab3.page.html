@@ -17,6 +17,7 @@
     </ion-slide>
   </ion-slides>
     <!-- Fin du modèle-->
+
   <ion-text><h1 align = "center">Skills</h1></ion-text>
   <ion-slides [options] = "config">
     <ion-slide *ngFor = "let video of items1">
@@ -24,6 +25,8 @@
         <ion-img [src]="video.images" alt=""></ion-img>
       </ion-card>
     </ion-slide>
+  </ion-slides>
+
     <ion-text><h1 align = "center">WTF</h1></ion-text>
     <ion-slides [options] = "config">
       <ion-slide *ngFor = "let video of items2">
