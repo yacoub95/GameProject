@@ -21,6 +21,14 @@
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
+    
   </div>
 
+  <ion-item *ngFor="let item of items | async">
+    <ion-label>{{ item.text }}</ion-label>
+  </ion-item>
+
+
+  
+  
 </ion-content>

@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ModalController } from '@ionic/angular';
 
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-tab4',
   templateUrl: './tab4.page.html',
@@ -13,9 +16,12 @@ export class Tab4Page implements OnInit {
   boss : boolean;
   connected : boolean;
 
+  items: Observable<any[]>;
+
   constructor(
     public afAuth: AngularFireAuth,
-    public modalController: ModalController
+    public modalController: ModalController,
+    public firestore: AngularFirestore
   ) {
     this.afAuth.authState.subscribe(auth => {
       if (!auth) {
@@ -32,6 +38,7 @@ export class Tab4Page implements OnInit {
         this.boss = false;
       }
     });
+    this.items = this.firestore.collection('Items').valueChanges();
    }
 
   ngOnInit() {
