@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ModalController } from '@ionic/angular';
 
-
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -33,6 +32,9 @@ export class Tab2Page {
         this.boss = false;
       }
     });
+  }
+
+  ngOnInit() {
   }
 
 }
