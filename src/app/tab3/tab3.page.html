@@ -24,6 +24,13 @@
         <ion-img [src]="video.images" alt=""></ion-img>
       </ion-card>
     </ion-slide>
+    <ion-text><h1 align = "center">WTF</h1></ion-text>
+    <ion-slides [options] = "config">
+      <ion-slide *ngFor = "let video of items2">
+        <ion-card (click) = "videomodal(video.url)">
+          <ion-img [src]="video.images" alt=""></ion-img>
+        </ion-card>
+      </ion-slide>
   </ion-slides>
 
 
