@@ -3,15 +3,32 @@
     <ion-title class="ion-text-center">
       News écrits par nos soins
     </ion-title>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!--<ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Tab 2</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header>-->
 
+  <div *ngIf="boss">
+    <ion-item-sliding>
+      <ion-item>
+        <ion-title class="ion-text-center">Réservé aux boss</ion-title>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="success">
+          <ion-buttons slot="end" >
+            <ion-button color="dark" (click)="openSettings()">
+              <ion-icon name="add-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </div>
   
 </ion-content>

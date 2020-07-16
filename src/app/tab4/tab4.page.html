@@ -1,9 +1,34 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>tab4</ion-title>
+    <ion-title class="ion-text-center">Astuces</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <div *ngIf="boss">
+    <ion-item-sliding>
+      <ion-item>
+        <ion-title class="ion-text-center">Réservé aux boss</ion-title>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="success">
+          <ion-buttons slot="end" >
+            <ion-button color="dark" (click)="openSettings()">
+              <ion-icon name="add-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+    
+  </div>
+
+  <ion-item *ngFor="let item of items | async">
+    <ion-label>{{ item.text }}</ion-label>
+  </ion-item>
+
+
+  
+  
 </ion-content>

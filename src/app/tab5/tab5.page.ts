@@ -5,7 +5,10 @@ import { ToastController } from '@ionic/angular';
 
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ModalController } from '@ionic/angular';
+
 import { SettingsPage } from '../settings/settings.page';
+import { RegisterPage} from '../register/register.page';
+
 
 @Component({
   selector: 'app-tab5',
@@ -18,6 +21,8 @@ export class Tab5Page implements OnInit {
     password:''
   };
   connected : boolean;
+  userId: string;
+  boss : boolean;
 
   constructor(
     private router: Router,
@@ -30,6 +35,14 @@ export class Tab5Page implements OnInit {
         this.connected = false;
       } else {
         this.connected = true;
+        this.userId = auth.uid;
+      }
+    });
+    this.afAuth.authState.subscribe(auth => {
+      if (this.userId == '4LW2JBh5J5gPlUK2XsNOQJntGV32') {
+        this.boss = true;
+      } else {
+        this.boss = false;
       }
     });
    }
@@ -70,4 +83,5 @@ export class Tab5Page implements OnInit {
     });
     return await modal.present();
   }
+  
 }
