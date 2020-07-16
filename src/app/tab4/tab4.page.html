@@ -14,7 +14,7 @@
       <ion-item-options side="end">
         <ion-item-option color="success">
           <ion-buttons slot="end" >
-            <ion-button color="dark" (click)="openSettings()">
+            <ion-button color="dark" (click)="add()" *ngIf="!showForm">
               <ion-icon name="add-outline"></ion-icon>
             </ion-button>
           </ion-buttons>
@@ -24,11 +24,28 @@
     
   </div>
 
-  <ion-item *ngFor="let item of items | async">
+  <ion-item *ngFor="let item of astuces | async">
     <ion-label>{{ item.text }}</ion-label>
   </ion-item>
 
 
-  
+
+
   
 </ion-content>
+
+<ion-footer class="padding" *ngIf="showForm">
+  <ion-card>
+    <ion-item lines="none">
+      <ion-label position="floating">Astuce</ion-label>
+      <ion-input [(ngModel)]="firebaseText" type="text" placeholder="Entrez l'astuce"></ion-input>
+    </ion-item>
+    <ion-button (click)="addAstuceFirestore()" expand="block">Ajouter</ion-button>
+  </ion-card>
+
+
+  <ion-button (click)="add()" expand="block" fill="outline">
+    Annuler
+    <ion-icon name="close" slot="start"></ion-icon>
+  </ion-button>
+</ion-footer>

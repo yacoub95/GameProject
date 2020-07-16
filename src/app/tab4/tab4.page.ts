@@ -16,7 +16,9 @@ export class Tab4Page implements OnInit {
   boss : boolean;
   connected : boolean;
 
-  items: Observable<any[]>;
+  astuces: Observable<any[]>;
+  firebaseText: string;
+  showForm = false;
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -38,10 +40,22 @@ export class Tab4Page implements OnInit {
         this.boss = false;
       }
     });
-    this.items = this.firestore.collection('Items').valueChanges();
+    this.astuces = this.firestore.collection('Astuces').valueChanges();
    }
 
   ngOnInit() {
+  }
+
+  add() {
+    this.showForm = !this.showForm;
+  }
+
+  addAstuceFirestore() {
+    this.firestore.collection('Astuces').add({
+        text: this.firebaseText
+    });
+    this.firebaseText = '';
+    this.showForm = !this.showForm;
   }
 
 }
