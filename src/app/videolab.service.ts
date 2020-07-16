@@ -8,10 +8,12 @@ export class VideolabService {
   private videoData = [
     {url : 'https://www.youtube.com/embed/_sGD6OqWG5E', images : 'https://img.youtube.com/vi/_sGD6OqWG5E/mqdefault.jpg'},
     {url : 'https://www.youtube.com/embed/lwp429eqER4', images : 'https://img.youtube.com/vi/lwp429eqER4/mqdefault.jpg'},
-    {url : 'https://www.youtube.com/watch?v=oQtHENM_GZU', images : 'https://img.youtube.com/vi/oQtHENM_GZU/mqdefault.jpg'},
-    {url : 'https://www.youtube.com/watch?v=_oHJUcc7INs', images : 'https://img.youtube.com/vi/_oHJUcc7INs/mqdefault.jpg'},
-    {url : 'https://www.youtube.com/watch?v=_7eM9Msap7T4', images : 'https://img.youtube.com/vi/7eM9Msap7T4/mqdefault.jpg'},
-    {url : 'https://www.youtube.com/watch?v=NmFXlijfvuc', images : 'https://img.youtube.com/vi/NmFXlijfvuc/mqdefault.jpg'}
+    // Vidéo fr à partir de là qui ont désactivé l'embed 
+    // {url : 'https://www.youtube.com/watch?v=j28oCsQ1jJo', images : 'https://img.youtube.com/vi/j28oCsQ1jJo/mqdefault.jpg'},
+    // {url : 'https://www.youtube.com/watch?v=0SQLMzDybUQ', images : 'https://img.youtube.com/vi/0SQLMzDybUQ/mqdefault.jpg'},
+    // {url : 'https://www.youtube.com/watch?v=-bofhasl5QQ', images : 'https://img.youtube.com/vi/-bofhasl5QQ/mqdefault.jpg'},
+    // {url : 'https://www.youtube.com/watch?v=O5Y4RgIr3g4', images : 'https://img.youtube.com/vi/O5Y4RgIr3g4/mqdefault.jpg'},
+    // {url : 'https://www.youtube.com/watch?v=9FC04XYx3ts', images : 'https://img.youtube.com/vi/9FC04XYx3ts/mqdefault.jpg'}
   ];
 
   private videoData1 = [
