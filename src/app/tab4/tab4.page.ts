@@ -19,6 +19,7 @@ export class Tab4Page implements OnInit {
   astuces: Observable<any[]>;
   firebaseText: string;
   showForm = false;
+  showSend = false;
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -57,5 +58,11 @@ export class Tab4Page implements OnInit {
     this.firebaseText = '';
     this.showForm = !this.showForm;
   }
+
+  send() {
+    this.showSend = !this.showSend;
+  }
+
+
 
 }
