@@ -1,17 +1,40 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Videos
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-text><h1 align = "center">Présentation du jeu</h1></ion-text>
+  <!-- Cartes vidéo -->
+  <ion-slides [options] = "config">
+    <ion-slide *ngFor = "let video of items">
+      <ion-card (click) = "videomodal(video.url)">
+        <ion-img [src]="video.images" alt=""></ion-img>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+    <!-- Fin du modèle-->
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-text><h1 align = "center">Skills</h1></ion-text>
+  <ion-slides [options] = "config">
+    <ion-slide *ngFor = "let video of items1">
+      <ion-card (click) = "videomodal(video.url)">
+        <ion-img [src]="video.images" alt=""></ion-img>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+    <ion-text><h1 align = "center">WTF</h1></ion-text>
+    <ion-slides [options] = "config">
+      <ion-slide *ngFor = "let video of items2">
+        <ion-card (click) = "videomodal(video.url)">
+          <ion-img [src]="video.images" alt=""></ion-img>
+        </ion-card>
+      </ion-slide>
+  </ion-slides>
+
+
 </ion-content>
