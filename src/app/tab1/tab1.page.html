@@ -14,7 +14,7 @@
   </ion-header>
   <ion-img src = "https://cdn.wccftech.com/wp-content/uploads/2019/02/apex-legends-keyart.jpg"></ion-img>
 
-  <!-- Carte d'actualités-->
+  <!-- Carte d'actualités
   <ion-card *ngFor = "let article of data?.articles">
     <img [src]="article.urlToImage"/>
     <ion-card-content>
@@ -27,5 +27,13 @@
       </p>
       <p>Source : {{article.source.name}}<p>
     </ion-card-content>
+  </ion-card>-->
+
+  <ion-card *ngFor = "let article of newsData">
+    <img [src]="newsData.imageUrl">
+    <h1>{{ newsData.title }}</h1>
+    <p>{{ newsData.description }}</p>
   </ion-card>
+
+
 </ion-content>
