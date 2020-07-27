@@ -18,7 +18,7 @@
   <ion-card *ngFor = "let article of data?.articles">
     <img [src]="article.urlToImage"/>
     <ion-card-content>
-      <ion-card-title><a href = "url">
+      <ion-card-title><a href = {{article.url}}>
         {{article.title}}
       </a>
         </ion-card-title>
@@ -28,6 +28,8 @@
       <p>Source : {{article.source.name}}<p>
     </ion-card-content>
   </ion-card>
+
+
 
   
 

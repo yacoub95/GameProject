@@ -22,7 +22,7 @@
       <ion-item-options side="end">
         <ion-item-option color="success">
           <ion-buttons slot="end" >
-            <ion-button color="dark" (click)="openSettings()">
+            <ion-button color="dark" (click)="add()">
               <ion-icon name="add-outline"></ion-icon>
             </ion-button>
           </ion-buttons>
@@ -30,5 +30,32 @@
       </ion-item-options>
     </ion-item-sliding>
   </div>
+
+  <ion-card>
+    <ion-item *ngFor="let item of ourNews | async" lines="none">
+      <ion-label class="articles"><p>{{ item.title }}</p></ion-label>
+    </ion-item>
+  </ion-card>
+
   
 </ion-content>
+
+<ion-footer class="padding" *ngIf="showForm">
+  <ion-card>
+    <ion-item lines="none">
+      <ion-label position="floating">Article</ion-label>
+      <ion-input [(ngModel)]="firebaseData.title" type="text" placeholder="Titre"></ion-input>
+      <ion-input [(ngModel)]="firebaseData.sousTitle" type="text" placeholder="Sous-Titre"></ion-input>
+      <ion-input [(ngModel)]="firebaseData.desc" type="text" placeholder="Description"></ion-input>
+      <ion-input [(ngModel)]="firebaseData.article" type="text" placeholder="Article"></ion-input>
+      <ion-input [(ngModel)]="firebaseData.date" type="text" placeholder="Date"></ion-input>
+      <ion-input [(ngModel)]="firebaseData.by" type="text" placeholder="Auteur"></ion-input>
+    </ion-item>
+    <ion-button (click)="addOurNewsFirestore()" expand="block">Ajouter</ion-button>
+  </ion-card>
+
+  <ion-button (click)="add()" expand="block" fill="outline" color="danger">
+    Annuler
+    <ion-icon name="close" slot="start"></ion-icon>
+  </ion-button>
+</ion-footer>
