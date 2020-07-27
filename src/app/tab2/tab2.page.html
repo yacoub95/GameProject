@@ -34,6 +34,7 @@
   <ion-card>
     <ion-item *ngFor="let item of ourNews | async" lines="none">
       <ion-label class="articles"><p>{{ item.title }}</p></ion-label>
+      <ion-label><p>{{ item.sousTitle }}</p></ion-label>
     </ion-item>
   </ion-card>
 
