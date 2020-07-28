@@ -24,6 +24,10 @@ const routes: Routes = [
   {
     path: 'videopopup',
     loadChildren: () => import('./videopopup/videopopup.module').then( m => m.VideopopupPageModule)
+  },
+  {
+    path: 'news-modal',
+    loadChildren: () => import('./news-modal/news-modal.module').then( m => m.NewsModalPageModule)
   }
 
 ];

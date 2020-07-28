@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ModalController } from '@ionic/angular';
+import { NewsModalPage } from '../news-modal/news-modal.page';
 
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
@@ -17,15 +18,17 @@ export class Tab2Page {
   connected : boolean;
 
   ourNews: Observable<any[]>;
-  firebaseData ={
-    title : '',
-    sousTitle : '',
-    article : '',
-    date : '',
-    by : '',
-    desc : ''
-  };
+  
+  title : '';
+  sousTitle : '';
+  article : '';
+  date : '';
+  by : '';
+  desc : '';
+  
 
+
+  street ="wesh";
   showForm = false;
 
   constructor(
@@ -59,15 +62,25 @@ export class Tab2Page {
   }
 
   addOurNewsFirestore() {
-    this.firestore.collection('News').add(this.firebaseData);
-    this.firebaseData ={
-      title : '',
-      sousTitle : '',
-      article : '',
-      date : '',
-      by : '',
-      desc : ''
-    };
+    this.firestore.collection('News').add({
+      title : this.title,
+      sousTitle : this.sousTitle,
+      article : this.article,
+      date : this.date,
+      by : this.by,
+      desc : this.desc
+    });
     this.showForm = !this.showForm;
   }
+
+  async openNewsModal(){
+    const modal = await this.modalController.create({
+      component : NewsModalPage,
+      componentProps: {
+        
+      }
+    });
+    return await modal.present();
+  }
+
 }
