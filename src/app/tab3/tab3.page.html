@@ -9,7 +9,7 @@
 <ion-content>
   <ion-text><h1 align = "center">Présentation du jeu</h1></ion-text>
   <!-- Cartes vidéo -->
-  <ion-slides [options] = "config">
+  <ion-slides [options] = "slideOpts">
     <ion-slide *ngFor = "let video of items">
       <ion-card (click) = "videomodal(video.url)">
         <ion-img [src]="video.images" alt=""></ion-img>
@@ -19,7 +19,7 @@
     <!-- Fin du modèle-->
 
   <ion-text><h1 align = "center">Skills</h1></ion-text>
-  <ion-slides [options] = "config">
+  <ion-slides [options] = "slideOpts">
     <ion-slide *ngFor = "let video of items1">
       <ion-card (click) = "videomodal(video.url)">
         <ion-img [src]="video.images" alt=""></ion-img>
@@ -28,7 +28,7 @@
   </ion-slides>
 
     <ion-text><h1 align = "center">WTF</h1></ion-text>
-    <ion-slides [options] = "config">
+    <ion-slides [options] = "slideOpts">
       <ion-slide *ngFor = "let video of items2">
         <ion-card (click) = "videomodal(video.url)">
           <ion-img [src]="video.images" alt=""></ion-img>
