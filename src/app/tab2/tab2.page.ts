@@ -29,8 +29,11 @@ export class Tab2Page {
     date : '',
     by : '',
     desc : '',
-    image:''
+    image:'',
+    game: '',
   }
+
+  jeu : boolean;
   
   showForm = false;
 
@@ -74,7 +77,8 @@ export class Tab2Page {
       date : '',
       by : '',
       desc : '',
-      image:''
+      image:'',
+      game: ''
     };
     this.showForm = !this.showForm;
   }
