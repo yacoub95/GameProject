@@ -32,6 +32,7 @@
   </div>
 
   <ion-card *ngFor="let item of ourNews | async" (click)="openNewsModal(item.id, item.title, item.sousTitle, item.article, item.date, item.by, item.desc)" >
+    <img [src]="item.image" class="image" >
     <ion-card-header>
       <ion-card-title>{{ item.title }}</ion-card-title>
       <ion-card-subtitle class="articles">{{ item.desc }}</ion-card-subtitle>
@@ -51,6 +52,7 @@
         <ion-textarea [(ngModel)]="newsData.article" type="text" placeholder="Article"></ion-textarea>
       <ion-input [(ngModel)]="newsData.date" type="text" placeholder="Date"></ion-input>
       <ion-input [(ngModel)]="newsData.by" type="text" placeholder="Auteur"></ion-input>
+      <ion-input [(ngModel)]="newsData.image" type="text" placeholder="Image"></ion-input>
     </ion-item>
     <ion-button (click)="addOurNewsFirestore()" expand="block">Ajouter</ion-button>
   </ion-card>

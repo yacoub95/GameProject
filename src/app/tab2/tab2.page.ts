@@ -28,9 +28,9 @@ export class Tab2Page {
     article : '',
     date : '',
     by : '',
-    desc : ''
+    desc : '',
+    image:''
   }
-  
   
   showForm = false;
 
@@ -73,12 +73,13 @@ export class Tab2Page {
       article : '',
       date : '',
       by : '',
-      desc : ''
+      desc : '',
+      image:''
     };
     this.showForm = !this.showForm;
   }
 
-  async openNewsModal(id, title, sousTitle, article, date, by, desc){
+  async openNewsModal(id, title, sousTitle, article, date, by, desc, image){
     const modal = await this.modalController.create({
       component : NewsModalPage,
       componentProps: {
@@ -88,7 +89,8 @@ export class Tab2Page {
         'article': article,
         'date': date,
         'by': by,
-        'desc': desc
+        'desc': desc,
+        'image': image
       }
     });
     return await modal.present();

@@ -10,6 +10,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 //https://medium.com/@alejandrolp1986/ionic-5-app-crud-ops-with-firebase-firestore-46911e208a04
 //https://www.it-swarm.dev/fr/angular/firestore-recuperation-des-documents-de-la-collection/835675614/
 //https://javebratt.com/crud-ionic-firestore/
+//https://forum.ionicframework.com/t/dynamic-adding-new-input-field/117534
 
 @Component({
   selector: 'app-news-modal',
@@ -25,6 +26,7 @@ export class NewsModalPage implements OnInit {
   date: string;
   by: string;
   desc: string;
+  image: string;
   
   ourNew: Observable<any[]>;
 
