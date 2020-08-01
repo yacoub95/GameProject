@@ -42,8 +42,8 @@ export class Tab3Page implements OnInit {
   const slideOpts = {
     slidesPerView: 1.7,
     coverflowEffect: {
-      rotate: 50,
-      stretch: 10,
+      rotate: 65,
+      stretch: 25,
       depth: 100,
       modifier: 1,
       slideShadows: false,
