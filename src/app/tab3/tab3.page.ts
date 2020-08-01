@@ -17,7 +17,7 @@ export class Tab3Page implements OnInit {
   config = {
     spaceBetween : 0,
     centeredSlides : true,
-    slidesPerView: 1.2,
+    slidesPerView: 1.4,
     loop : true,
     autplay : true
   }; 
@@ -39,7 +39,7 @@ export class Tab3Page implements OnInit {
     console.log(this.items1);
     console.log(this.items2);
   }
-  const slideOpts = {
+  slideOpts = {
     slidesPerView: 1.7,
     coverflowEffect: {
       rotate: 65,
@@ -127,4 +127,6 @@ export class Tab3Page implements OnInit {
       }
     }
   }
+  
+  
 }
