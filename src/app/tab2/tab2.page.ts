@@ -7,6 +7,8 @@ import { NewsModalPage } from '../news-modal/news-modal.page';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
+
+
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -18,17 +20,18 @@ export class Tab2Page {
   connected : boolean;
 
   ourNews: Observable<any[]>;
-  
-  title : '';
-  sousTitle : '';
-  article : '';
-  date : '';
-  by : '';
-  desc : '';
-  
 
-
-  street ="wesh";
+  newsData = {
+    id : this.firestore.createId(),
+    title : '',
+    sousTitle : '',
+    article : '',
+    date : '',
+    by : '',
+    desc : ''
+  }
+  
+  
   showForm = false;
 
   constructor(
@@ -62,22 +65,30 @@ export class Tab2Page {
   }
 
   addOurNewsFirestore() {
-    this.firestore.collection('News').add({
-      title : this.title,
-      sousTitle : this.sousTitle,
-      article : this.article,
-      date : this.date,
-      by : this.by,
-      desc : this.desc
-    });
+    this.firestore.collection('News').add(this.newsData);
+    this.newsData = {
+      id :'',
+      title : '',
+      sousTitle : '',
+      article : '',
+      date : '',
+      by : '',
+      desc : ''
+    };
     this.showForm = !this.showForm;
   }
 
-  async openNewsModal(){
+  async openNewsModal(id, title, sousTitle, article, date, by, desc){
     const modal = await this.modalController.create({
       component : NewsModalPage,
       componentProps: {
-        
+        'id' : id,
+        'title': title,
+        'sousTitle': sousTitle,
+        'article': article,
+        'date': date,
+        'by': by,
+        'desc': desc
       }
     });
     return await modal.present();

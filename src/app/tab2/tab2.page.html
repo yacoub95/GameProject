@@ -31,7 +31,7 @@
     </ion-item-sliding>
   </div>
 
-  <ion-card *ngFor="let item of ourNews | async" (click)="openNewsModal()">
+  <ion-card *ngFor="let item of ourNews | async" (click)="openNewsModal(item.id, item.title, item.sousTitle, item.article, item.date, item.by, item.desc)" >
     <ion-card-header>
       <ion-card-title>{{ item.title }}</ion-card-title>
       <ion-card-subtitle class="articles">{{ item.desc }}</ion-card-subtitle>
@@ -45,12 +45,12 @@
   <ion-card>
     <ion-item lines="none">
       <ion-label position="floating">Article</ion-label>
-      <ion-input [(ngModel)]="title" type="text" placeholder="Titre"></ion-input>
-      <ion-input [(ngModel)]="sousTitle" type="text" placeholder="Sous-Titre"></ion-input>
-      <ion-input [(ngModel)]="desc" type="text" placeholder="Description"></ion-input>
-      <ion-input [(ngModel)]="article" type="text" placeholder="Article"></ion-input>
-      <ion-input [(ngModel)]="date" type="text" placeholder="Date"></ion-input>
-      <ion-input [(ngModel)]="by" type="text" placeholder="Auteur"></ion-input>
+      <ion-input [(ngModel)]="newsData.title" type="text" placeholder="Titre"></ion-input>
+      <ion-input [(ngModel)]="newsData.sousTitle" type="text" placeholder="Sous-Titre"></ion-input>
+      <ion-input [(ngModel)]="newsData.desc" type="text" placeholder="Description"></ion-input>
+      <ion-input [(ngModel)]="newsData.article" type="text" placeholder="Article"></ion-input>
+      <ion-input [(ngModel)]="newsData.date" type="text" placeholder="Date"></ion-input>
+      <ion-input [(ngModel)]="newsData.by" type="text" placeholder="Auteur"></ion-input>
     </ion-item>
     <ion-button (click)="addOurNewsFirestore()" expand="block">Ajouter</ion-button>
   </ion-card>

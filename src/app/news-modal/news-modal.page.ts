@@ -1,10 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { NavParams } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
 
 import { Observable } from 'rxjs';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+
+//https://dottedsquirrel.com/firebase/how-to-create-and-read-things-in-firebase/
+//https://medium.com/@alejandrolp1986/ionic-5-app-crud-ops-with-firebase-firestore-46911e208a04
+//https://www.it-swarm.dev/fr/angular/firestore-recuperation-des-documents-de-la-collection/835675614/
+//https://javebratt.com/crud-ionic-firestore/
 
 @Component({
   selector: 'app-news-modal',
@@ -13,22 +18,30 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class NewsModalPage implements OnInit {
 
-  title = null;
-  ourNews: Observable<any[]>;
+  id: string;
+  title: string;
+  sousTitle: string;
+  article: string;
+  date: string;
+  by: string;
+  desc: string;
+  
+  ourNew: Observable<any[]>;
+
 
   constructor(
     public navParams: NavParams,
     public modalController: ModalController,
     public firestore: AngularFirestore
   ) {
-
+  
    }
 
   ngOnInit() {
-    this.ourNews = this.firestore.collection('News').valueChanges({idField: 'eventId'});
   }
 
   closeModal() {
     this.modalController.dismiss();
   }
+
 }
