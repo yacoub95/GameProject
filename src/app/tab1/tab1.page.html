@@ -14,24 +14,36 @@
   </ion-header>
   <ion-img src = "https://cdn.wccftech.com/wp-content/uploads/2019/02/apex-legends-keyart.jpg"></ion-img>
 
+
+  <ion-item lines="none">
+    <ion-label class="ion-padding">
+      <h1><b>Actualités</b></h1>
+    </ion-label>
+  </ion-item>
   <!-- Carte d'actualités-->
-  <ion-card *ngFor = "let article of data?.articles">
-    <img [src]="article.urlToImage"/>
-    <ion-card-content>
-      <ion-card-title><a href = {{article.url}}>
-        {{article.title}}
-      </a>
-        </ion-card-title>
-      <p>
-        {{article.description}}
-      </p>
-      <p>Source : {{article.source.name}}<p>
-    </ion-card-content>
-  </ion-card>
+  <ion-slides [options]="sliderConfig">
+    <ion-slide *ngFor = "let article of data?.articles">
+      <ion-card>
+        <img [src]="article.urlToImage"/>
+        <ion-card-content>
+          <ion-card-title class="title-card"><a href = {{article.url}}>
+            {{article.title}}
+            </a>
+          </ion-card-title>
+          <p class="desc-card">
+            {{article.description}}
+          </p>
+          <!--<p>Source : {{article.source.name}}<p>-->
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
 
-
-
-  
+  <ion-item lines="none">
+    <ion-label class="ion-padding">
+      <h1><b>Dataminage</b></h1>
+    </ion-label>
+  </ion-item>
 
 
 </ion-content>

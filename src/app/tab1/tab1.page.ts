@@ -9,7 +9,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Tab1Page {
   data : any;
-  
+  sliderConfig = {
+    spaceBetween: 10,
+    centeredSlides: true,
+    slidesPerView: 1.4,
+    loop : true
+  }
 
   constructor(
     public http : HttpClient
