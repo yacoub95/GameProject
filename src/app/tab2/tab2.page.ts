@@ -30,10 +30,8 @@ export class Tab2Page {
     by : '',
     desc : '',
     image:'',
-    game: '',
+    game: ''
   }
-
-  jeu : boolean;
   
   showForm = false;
 

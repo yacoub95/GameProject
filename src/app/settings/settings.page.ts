@@ -11,15 +11,30 @@ import { ModalController } from '@ionic/angular';
 })
 export class SettingsPage implements OnInit {
 
+  connected : boolean;
+
   constructor(
     public afAuth: AngularFireAuth,
     public modalController: ModalController
-  ) { }
+  ) {
+    this.afAuth.authState.subscribe(auth => {
+      if (!auth) {
+        this.connected = false;
+      } else {
+        this.connected = true;
+      }
+    });
+   }
 
   ngOnInit() {
   }
 
   close() {
     this.modalController.dismiss();
+  }
+
+  logout() {
+    this.modalController.dismiss();
+    this.afAuth.signOut();
   }
 }

@@ -5,6 +5,8 @@ import { ToastController } from '@ionic/angular';
 
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ModalController } from '@ionic/angular';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 import { SettingsPage } from '../settings/settings.page';
 import { RegisterPage} from '../register/register.page';
@@ -24,6 +26,9 @@ export class Tab5Page implements OnInit {
   userId: string;
   boss : boolean;
 
+  mail: string;
+  method: any;
+
   constructor(
     private router: Router,
     public toastController: ToastController,
@@ -36,6 +41,8 @@ export class Tab5Page implements OnInit {
       } else {
         this.connected = true;
         this.userId = auth.uid;
+        this.mail = auth.email;
+        this.method = auth.providerData[0].providerId;
       }
     });
     this.afAuth.authState.subscribe(auth => {
@@ -70,11 +77,6 @@ export class Tab5Page implements OnInit {
       position: 'top'
     });
     toast.present();
-  }
-
-  logout() {
-    this.modalController.dismiss();
-    this.afAuth.signOut();
   }
 
   async openSettings() {

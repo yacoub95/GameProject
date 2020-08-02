@@ -4,6 +4,11 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
+import { AngularFirestore } from '@angular/fire/firestore';
+import { auth } from 'firebase';
+
+//https://fireship.io/lessons/angularfire-google-oauth/
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -11,23 +16,27 @@ import { Router } from '@angular/router';
 })
 export class RegisterPage implements OnInit {
   dataUser = {
+    id: this.firestore.createId(),
     email:'',
     password:'',
     username:'',
     game:''
   };
+  userId : string;
   connected : boolean;
 
   constructor(
     public afAuth: AngularFireAuth,
     public toastController: ToastController,
-    private router: Router
+    private router: Router,
+    public firestore: AngularFirestore
   ) { 
     this.afAuth.authState.subscribe(auth => {
       if (!auth) {
         this.connected = false;
       } else {
         this.connected = true;
+        this.userId = auth.uid;
       }
     });
   }
@@ -63,12 +72,15 @@ export class RegisterPage implements OnInit {
       console.log('Erreur: ' + err);
       this.errorMail();
     });
+    this.firestore.collection('Users').add(this.dataUser);
     this.dataUser = {
+      id : '',
       email: '',
       password: '',
       username:'',
       game:''
     };
   }
+
 
 }

@@ -12,4 +12,9 @@
 
 <ion-content>
 
+  <div *ngIf="connected">
+    <div class="ion-padding">
+      <ion-button color="danger" expand="block" shape="round" fill="solid" (click)="logout()">Déconnexion</ion-button>
+    </div>
+  </div>
 </ion-content>
