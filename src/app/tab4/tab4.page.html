@@ -1,104 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="ion-text-center">Astuces</ion-title>
+    <ion-title class="ion-text-center">Autre</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
   <div *ngIf="boss">
-    <ion-item-sliding>
-      <ion-item>
-        <ion-title class="ion-text-center">Réservé aux boss</ion-title>
-      </ion-item>
-      <ion-item-options side="end">
-        <ion-item-option color="success">
-          <ion-buttons slot="end" >
-            <ion-button color="dark" (click)="add()">
-              <ion-icon name="add-outline"></ion-icon>
-            </ion-button>
-          </ion-buttons>
-        </ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
+  
   </div>
-
-  <ion-item lines="none">
-    <ion-label class="ion-padding">
-      <h1 class="ion-text-center"><b>Nos astuces</b></h1>
-    </ion-label>
-  </ion-item>
-
- 
-  <ion-card>
-    <ion-item *ngFor="let item of astuces | async" lines="none">
-      <ion-label><h5>{{ item.text }}</h5></ion-label>
-    </ion-item>
-  </ion-card>
-
-
-
 
   
 </ion-content>
-
-<ion-footer class="padding" *ngIf="showForm">
-  <ion-card>
-    <ion-item lines="none">
-      <ion-label position="floating">Astuce</ion-label>
-      <ion-input [(ngModel)]="firebaseText" type="text" placeholder="Entrez l'astuce"></ion-input>
-    </ion-item>
-    <ion-button (click)="addAstuceFirestore()" expand="block">Ajouter</ion-button>
-  </ion-card>
-
-  <ion-button (click)="add()" expand="block" fill="outline" color="danger">
-    Annuler
-    <ion-icon name="close" slot="start"></ion-icon>
-  </ion-button>
-</ion-footer>
-
-<ion-footer class="padding" *ngIf="showSend">
-  <ion-card>
-    <ion-item lines="none">
-      <ion-label position="floating">Astuce</ion-label>
-      <ion-input [(ngModel)]="firebaseText" type="text" placeholder="Entrez votre astuce"></ion-input>
-    </ion-item>
-    <ion-button  expand="block" color="secondary">Envoyer</ion-button>
-  </ion-card><!--(click)="sendAstuce()"-->
-
-  <ion-button (click)="send()" expand="block" fill="outline" color="danger">
-    Annuler
-    <ion-icon name="close" slot="start"></ion-icon>
-  </ion-button>
-</ion-footer>
-
-
-<ion-footer *ngIf="connected">
-  <ion-toolbar >
-    <ion-item lines="none">
-      <ion-label>
-        <h5>Vous avez une astuce à partager ?</h5>
-      </ion-label>
-      <ion-buttons slot="end">
-        <ion-button color="dark" (click)="send()" expand="block">
-          <ion-icon name="add-outline"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-item>
-  </ion-toolbar>
-</ion-footer>
-
-<ion-footer *ngIf="!connected">
-  <ion-toolbar >
-    <ion-item lines="none">
-      <ion-label>
-        <h5 class="small-text"><b>Connectez-vous pour proposer une astuce</b></h5>
-      </ion-label>
-      <ion-buttons slot="end">
-        <ion-button color="dark" expand="block" routerLink="/tabs/tab5">
-          <ion-icon name="arrow-forward-outline"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-item>
-  </ion-toolbar>
-</ion-footer>

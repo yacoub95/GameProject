@@ -19,8 +19,10 @@ export class Tab2Page {
   boss : boolean;
   connected : boolean;
 
+  astuces: Observable<any[]>;
   ourNews: Observable<any[]>;
 
+  astuceText: string;
   newsData = {
     id : this.firestore.createId(),
     title : '',
@@ -32,8 +34,13 @@ export class Tab2Page {
     image:'',
     game: ''
   }
+  suggestionAstuce: string;
   
-  showForm = false;
+  showFormAstuces = false;
+  showFormNews = false;
+  showSend = false;
+
+  selectSegment: string;
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -55,14 +62,43 @@ export class Tab2Page {
         this.boss = false;
       }
     });
+    this.astuces = this.firestore.collection('Astuces').valueChanges();
     this.ourNews = this.firestore.collection('News').valueChanges();
+  }
+
+  ionViewWillEnter(){
+    this.selectSegment = "astuces"
   }
 
   ngOnInit() {
   }
 
-  add() {
-    this.showForm = !this.showForm;
+  send() {
+    this.showSend = !this.showSend;
+  }
+
+  sendSuggestionAstuce(){
+    this.firestore.collection('SuggestionOfAstuces').add({
+      text: this.suggestionAstuce
+    });
+    this.suggestionAstuce = '';
+    this.showSend = !this.showSend;
+  }
+
+  addAstuces() {
+    this.showFormAstuces = !this.showFormAstuces;
+  }
+
+  addAstuceFirestore() {
+    this.firestore.collection('Astuces').add({
+      text: this.astuceText
+    });
+    this.astuceText = '';
+    this.showFormAstuces = !this.showFormAstuces;
+  }
+
+  addNews() {
+    this.showFormNews = !this.showFormNews;
   }
 
   addOurNewsFirestore() {
@@ -78,7 +114,7 @@ export class Tab2Page {
       image:'',
       game: ''
     };
-    this.showForm = !this.showForm;
+    this.showFormNews = !this.showFormNews;
   }
 
   async openNewsModal(id, title, sousTitle, article, date, by, desc, image){

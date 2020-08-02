@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="ion-text-center">
-      News écrits par nos soins
+      Contenu Exclusif
     </ion-title>
     
   </ion-toolbar>
@@ -16,13 +16,22 @@
 
   <div *ngIf="boss">
     <ion-item-sliding>
-      <ion-item>
+      <ion-item lines="none">
         <ion-title class="ion-text-center">Réservé aux boss</ion-title>
       </ion-item>
+      <ion-item-options side="start">
+        <ion-item-option color="secondary">
+          <ion-buttons slot="end" >
+            <ion-button color="dark" (click)="addAstuces()">
+              <ion-icon name="add-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item-option>
+      </ion-item-options>
       <ion-item-options side="end">
         <ion-item-option color="success">
           <ion-buttons slot="end" >
-            <ion-button color="dark" (click)="add()">
+            <ion-button color="dark" (click)="addNews()">
               <ion-icon name="add-outline"></ion-icon>
             </ion-button>
           </ion-buttons>
@@ -31,19 +40,77 @@
     </ion-item-sliding>
   </div>
 
-  <div>
-  <ion-card *ngFor="let item of ourNews | async" (click)="openNewsModal(item.id, item.title, item.sousTitle, item.article, item.date, item.by, item.desc, item.image)" >
-    <img [src]="item.image" class="image" >
-    <ion-card-header>
-      <ion-card-title>{{ item.title }}</ion-card-title>
-      <ion-card-subtitle class="articles">{{ item.desc }}</ion-card-subtitle>
-    </ion-card-header>
-  </ion-card>
+  <ion-segment [(ngModel)]="selectSegment">
+    <ion-segment-button value="astuces">
+      <ion-icon name="bulb-outline"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="news">
+      <ion-icon name="newspaper-outline"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="selectSegment">
+
+
+    <ion-list *ngSwitchCase="'astuces'">
+      <div class="ion-padding">
+        <ion-item lines="none">
+          <ion-label>
+            <h1  class="ion-text-center"><b>Astuces</b></h1>
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none" *ngIf="connected">
+          <ion-label text-wrap>
+            <h5 class="small-text">Vous avez une astuce à partager ?</h5>
+          </ion-label>
+          <ion-buttons slot="end">
+            <ion-button color="dark" (click)="send()" expand="block">
+                <ion-icon name="send-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+
+        <ion-item lines="none" *ngIf="!connected">
+          <ion-label text-wrap>
+            <h5 class="small-text">Connectez-vous pour proposer une astuce</h5>
+          </ion-label>
+          <ion-buttons slot="end">
+            <ion-button color="dark" expand="block" routerLink="/tabs/tab5">
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+      </div>
+
+      <ion-card>
+        <ion-item *ngFor="let item of astuces | async" lines="none">
+          <ion-label><h5>{{ item.text }}</h5></ion-label>
+        </ion-item>
+      </ion-card>
+    </ion-list>
+
+
+    <ion-list *ngSwitchCase="'news'">
+      <ion-item lines="none">
+        <ion-label class="ion-padding">
+          <h1 class="ion-text-center"><b>Nos news</b></h1>
+        </ion-label>
+      </ion-item>
+
+      <ion-card *ngFor="let item of ourNews | async" (click)="openNewsModal(item.id, item.title, item.sousTitle, item.article, item.date, item.by, item.desc, item.image)" >
+        <img [src]="item.image" class="image" >
+        <ion-card-header>
+          <ion-card-title>{{ item.title }}</ion-card-title>
+          <ion-card-subtitle class="articles">{{ item.desc }}</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </ion-list>
   </div>
+
+  
   
 </ion-content>
 
-<ion-footer class="padding" *ngIf="showForm">
+<ion-footer class="padding" *ngIf="showFormNews">
   <ion-card>
     <ion-item lines="none">
       <ion-label position="floating">Article</ion-label>
@@ -62,7 +129,38 @@
     <ion-button (click)="addOurNewsFirestore()" expand="block">Ajouter</ion-button>
   </ion-card>
 
-  <ion-button (click)="add()" expand="block" fill="outline" color="danger">
+  <ion-button (click)="addNews()" expand="block" fill="outline" color="danger">
+    Annuler
+    <ion-icon name="close" slot="start"></ion-icon>
+  </ion-button>
+</ion-footer>
+
+<ion-footer class="padding" *ngIf="showFormAstuces">
+  <ion-card>
+    <ion-item lines="none">
+      <ion-label position="floating">Astuce</ion-label>
+      <ion-input [(ngModel)]="astuceText" type="text" placeholder="Entrez l'astuce"></ion-input>
+    </ion-item>
+    <ion-button (click)="addAstuceFirestore()" expand="block">Ajouter</ion-button>
+  </ion-card>
+
+  <ion-button (click)="addAstuces()" expand="block" fill="outline" color="danger">
+    Annuler
+    <ion-icon name="close" slot="start"></ion-icon>
+  </ion-button>
+</ion-footer>
+
+
+<ion-footer class="padding" *ngIf="showSend">
+  <ion-card>
+    <ion-item lines="none">
+      <ion-label position="floating">Astuce</ion-label>
+      <ion-input [(ngModel)]="suggestionAstuce" type="text" placeholder="Entrez votre astuce"></ion-input>
+    </ion-item>
+    <ion-button expand="block" color="secondary" (click)="sendSuggestionAstuce()">Envoyer</ion-button>
+  </ion-card>
+
+  <ion-button (click)="send()" expand="block" fill="outline" color="danger">
     Annuler
     <ion-icon name="close" slot="start"></ion-icon>
   </ion-button>

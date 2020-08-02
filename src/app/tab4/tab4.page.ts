@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AngularFireAuth } from '@angular/fire/auth';
-import { ModalController } from '@ionic/angular';
 
-import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tab4',
@@ -16,15 +13,8 @@ export class Tab4Page implements OnInit {
   boss : boolean;
   connected : boolean;
 
-  astuces: Observable<any[]>;
-  firebaseText: string;
-  showForm = false;
-  showSend = false;
-
   constructor(
-    public afAuth: AngularFireAuth,
-    public modalController: ModalController,
-    public firestore: AngularFirestore
+    public afAuth: AngularFireAuth
   ) {
     this.afAuth.authState.subscribe(auth => {
       if (!auth) {
@@ -41,28 +31,9 @@ export class Tab4Page implements OnInit {
         this.boss = false;
       }
     });
-    this.astuces = this.firestore.collection('Astuces').valueChanges();
    }
 
   ngOnInit() {
   }
-
-  add() {
-    this.showForm = !this.showForm;
-  }
-
-  addAstuceFirestore() {
-    this.firestore.collection('Astuces').add({
-        text: this.firebaseText
-    });
-    this.firebaseText = '';
-    this.showForm = !this.showForm;
-  }
-
-  send() {
-    this.showSend = !this.showSend;
-  }
-
-
 
 }
