@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -15,11 +14,24 @@ export class Tab1Page {
     slidesPerView: 1.4,
     loop : true
   }
+  sliderGame = {
+    centeredSlides: true,
+    slidesPerView: 1,
+  }
+
+  selectGame: string;
 
   constructor(
     public http : HttpClient
   ) {
     this.getData();
+  }
+
+  openAppApex(){
+    this.selectGame= 'apex';
+  }
+  openAppFortnite(){
+    this.selectGame= 'fortnite';
   }
 
   getData(){

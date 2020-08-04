@@ -11,6 +11,9 @@ import { Observable } from 'rxjs';
 import { SettingsPage } from '../settings/settings.page';
 import { RegisterPage} from '../register/register.page';
 
+//https://stackoverflow.com/questions/47206838/get-user-uid-from-firebase-via-service
+//https://www.positronx.io/send-verification-email-new-user-firebase-angular/
+//https://fireship.io/lessons/angularfire-google-oauth/
 
 @Component({
   selector: 'app-tab5',
