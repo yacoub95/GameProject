@@ -14,11 +14,6 @@ export class Tab1Page {
     slidesPerView: 1.4,
     loop : true
   }
-  sliderGame = {
-    centeredSlides: true,
-    slidesPerView: 1,
-  }
-
   selectGame: string;
 
   constructor(
