@@ -51,6 +51,7 @@ export class Tab4Page implements OnInit {
    }
 
   ngOnInit() {
+    
   }
 
   ionViewDidEnter() {
@@ -148,7 +149,7 @@ export class Tab4Page implements OnInit {
   }
 
   ionViewWillEnter(){
-    this.selectSegment = "stats"
+    this.selectSegment = "desc"
   }
 
   async choix() {
@@ -157,16 +158,16 @@ export class Tab4Page implements OnInit {
       cssClass: 'my-custom-class',
       //mode: 'ios',
       buttons: [{
-        text: 'Stats',
+        text: 'Statistiques',
         //role: 'destructive',
         icon: 'stats-chart',
         handler: () => {
-          console.log('Delete clicked');
+          console.log('Stats clicked');
           this.selectSegment = "stats";
           this.graph = true;
         }
       }, {
-        text: 'Musics',
+        text: 'Musiques',
         icon: 'musical-notes',
         handler: () => {
           console.log('Share clicked');
@@ -177,6 +178,7 @@ export class Tab4Page implements OnInit {
         icon: 'server',
         handler: () => {
           console.log('Play clicked');
+          this.selectSegment = "tracker";
         }
       }, {
         text: 'Annuler',
