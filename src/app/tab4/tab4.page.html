@@ -1,12 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="ion-text-center">Autre</ion-title>
+    <ion-title class="ion-text-center">Apex</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-card>
+  <!--<ion-card>
     <ion-card-header>
       <ion-card-subtitle>test</ion-card-subtitle>
       <ion-card-title>Card Title</ion-card-title>
@@ -16,7 +16,37 @@
       Keep close to Nature's heart... and break clear away, once in awhile,
       and climb a mountain or spend a week in the woods. Wash your spirit clean.
     </ion-card-content>
-  </ion-card>
+  </ion-card>-->
 
+  <!--<ion-button color="primary" (click)="choix()">Primary</ion-button>
   
+  <ion-button *ngIf="graph" expand="block" color="dark" (click)="displayGraphs()">Afficher les graphiques</ion-button>-->
+
+  <div [ngSwitch]="selectSegment">
+    <ion-list *ngSwitchCase="'stats'">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Utilisation des légendes</ion-card-title>
+          
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #legendsUsage></canvas>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Frags par partie des légendes</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #legendsKPM></canvas>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'musics'">
+      <h1>Musics</h1>
+    </ion-list>
+  </div>
+
+
 </ion-content>

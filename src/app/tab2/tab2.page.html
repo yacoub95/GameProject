@@ -13,6 +13,14 @@
       <ion-title size="large">Tab 2</ion-title>
     </ion-toolbar>
   </ion-header>-->
+  <div *ngIf="!connected">
+
+      <h3 class="lock">Contenu verrouillé</h3>
+      <ion-icon name="lock-closed-outline" class="lock-icon"></ion-icon>
+    
+  </div>
+
+<div *ngIf="connected">
 
   <div *ngIf="boss">
     <ion-item-sliding>
@@ -83,7 +91,7 @@
 
       <ion-card>
         <ion-item *ngFor="let item of astuces | async" lines="none">
-          <ion-label><h5>{{ item.text }}</h5></ion-label>
+          <ion-label><h5 class="astuces">{{ item.text }}</h5></ion-label>
         </ion-item>
       </ion-card>
     </ion-list>
@@ -106,8 +114,7 @@
     </ion-list>
   </div>
 
-  
-  
+</div>  
 </ion-content>
 
 <ion-footer class="padding" *ngIf="showFormNews">
@@ -151,7 +158,7 @@
 </ion-footer>
 
 
-<ion-footer class="padding" *ngIf="showSend">
+<ion-footer class="send" *ngIf="showSend">
   <ion-card>
     <ion-item lines="none">
       <ion-label position="floating">Astuce</ion-label>
@@ -165,3 +172,16 @@
     <ion-icon name="close" slot="start"></ion-icon>
   </ion-button>
 </ion-footer>
+
+<div *ngIf="!connected">
+  <ion-footer>
+    <ion-item lines="none">
+      <h6 class="lock">Connectez-vous pour accéder à notre contenu exclusif.</h6>
+      <ion-buttons slot="end">
+          <ion-button color="dark" expand="block" routerLink="/tabs/tab5">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-footer>
+</div>
