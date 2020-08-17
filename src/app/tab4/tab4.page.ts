@@ -5,6 +5,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { ActionSheetController } from '@ionic/angular';
 import { Chart } from 'chart.js';
 
+//https://enappd.com/blog/charts-in-ionic-4-apps-and-pwa-part-1/52/
+
 @Component({
   selector: 'app-tab4',
   templateUrl: './tab4.page.html',

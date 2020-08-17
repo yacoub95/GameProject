@@ -17,4 +17,11 @@
       <ion-button color="danger" expand="block" shape="round" fill="solid" (click)="logout()">Déconnexion</ion-button>
     </div>
   </div>
+
+  <ion-item lines="none">
+    <ion-icon name="moon-outline" slot="start"></ion-icon>
+    <ion-label>Mode sombre</ion-label>
+    <ion-toggle (ionChange)="changeTheme()" [ngModel]="darkMode" slot="end"></ion-toggle>
+  </ion-item>
+
 </ion-content>

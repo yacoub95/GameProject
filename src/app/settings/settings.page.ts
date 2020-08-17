@@ -12,6 +12,7 @@ import { ModalController } from '@ionic/angular';
 export class SettingsPage implements OnInit {
 
   connected : boolean;
+  darkMode: boolean = true;
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -24,6 +25,8 @@ export class SettingsPage implements OnInit {
         this.connected = true;
       }
     });
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    this.darkMode = prefersDark.matches;
    }
 
   ngOnInit() {
@@ -36,5 +39,10 @@ export class SettingsPage implements OnInit {
   logout() {
     this.modalController.dismiss();
     this.afAuth.signOut();
+  }
+
+  changeTheme(){
+    this.darkMode = !this.darkMode;
+    document.body.classList.toggle('dark');
   }
 }
