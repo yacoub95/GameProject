@@ -15,6 +15,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore/';
+import { LottieSplashScreen } from '@ionic-native/lottie-splash-screen';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAzIWVV1_jjzdTi11k4bVhDQBf2gXRKb2g",
@@ -44,6 +45,7 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
+    LottieSplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
