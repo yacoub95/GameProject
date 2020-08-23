@@ -5,11 +5,8 @@ import { ToastController } from '@ionic/angular';
 
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ModalController } from '@ionic/angular';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
 
 import { SettingsPage } from '../settings/settings.page';
-import { RegisterPage} from '../register/register.page';
 
 
 //https://stackoverflow.com/questions/47206838/get-user-uid-from-firebase-via-service
