@@ -6,11 +6,17 @@ import { Injectable } from '@angular/core';
 export class VideolabService {
     
   private videoData = [
-    {url : 'https://www.youtube.com/embed/M9Pmf9AB4Mo', images : 'https://img.youtube.com/vi/M9Pmf9AB4Mo/mqdefault.jpg'},
+    {url : 'https://www.youtube.com/embed/SCUXdRb5abU', images : 'https://img.youtube.com/vi/SCUXdRb5abU/mqdefault.jpg'},
+    {url : 'https://www.youtube.com/embed/WS18WGCUSng', images : 'https://img.youtube.com/vi/WS18WGCUSng/mqdefault.jpg'},
+    {url : 'https://www.youtube.com/embed/ANdAEztmFiA', images : 'https://img.youtube.com/vi/ANdAEztmFiA/mqdefault.jpg'},
     {url : 'https://www.youtube.com/embed/qzdGo7FBndA', images : 'https://img.youtube.com/vi/qzdGo7FBndA/mqdefault.jpg'},
-    {url : 'https://www.youtube.com/embed/_sGD6OqWG5E', images : 'https://img.youtube.com/vi/_sGD6OqWG5E/mqdefault.jpg'},
-    {url : 'https://www.youtube.com/embed/HoivTyVoWp4', images : 'https://img.youtube.com/vi/HoivTyVoWp4/mqdefault.jpg'},
+    {url : 'https://www.youtube.com/embed/M9Pmf9AB4Mo', images : 'https://img.youtube.com/vi/M9Pmf9AB4Mo/mqdefault.jpg'}, // Endorsement
+    {url : 'https://www.youtube.com/embed/quACziGJqQM', images : 'https://img.youtube.com/vi/quACziGJqQM/mqdefault.jpg'},
+    {url : 'https://www.youtube.com/embed/qIC1XHaA89c', images : 'https://img.youtube.com/vi/qIC1XHaA89c/mqdefault.jpg'},
+    {url : 'https://www.youtube.com/embed/iRzZGQEPwY4', images : 'https://img.youtube.com/vi/iRzZGQEPwY4/mqdefault.jpg'},
     {url : 'https://www.youtube.com/embed/lwp429eqER4', images : 'https://img.youtube.com/vi/lwp429eqER4/mqdefault.jpg'},
+    {url : 'https://www.youtube.com/embed/_sGD6OqWG5E', images : 'https://img.youtube.com/vi/_sGD6OqWG5E/mqdefault.jpg'},
+    {url : 'https://www.youtube.com/embed/HoivTyVoWp4', images : 'https://img.youtube.com/vi/HoivTyVoWp4/mqdefault.jpg'}, //1
     {url : 'https://www.youtube.com/embed/j28oCsQ1jJo', images : 'https://img.youtube.com/vi/j28oCsQ1jJo/mqdefault.jpg'},
     {url : 'https://www.youtube.com/embed/0SQLMzDybUQ', images : 'https://img.youtube.com/vi/0SQLMzDybUQ/mqdefault.jpg'},
     {url : 'https://www.youtube.com/embed/-bofhasl5QQ', images : 'https://img.youtube.com/vi/-bofhasl5QQ/mqdefault.jpg'},
