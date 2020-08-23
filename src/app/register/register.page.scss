@@ -1,7 +1,47 @@
+ion-content{
+    --ion-background-color: #a63536;
+}
+
+.bar-register{
+    --ion-background-color: #a63536;
+}
+
+.register-title{
+    color: white;
+    font-family: 'KanitLight';
+}
+
+.icon-register{
+    color: white;
+}
+
 .padding{
     padding: 5%;
 }
 
 .padding2{
     padding-top: 50px;
+}
+
+.title{
+    font-family: Antara;
+    text-align: center;
+    font-size: 70px;
+    color: #ffffff !important;
+    padding-top: 30px;
+}
+
+.register-card{
+    --ion-background-color: white;
+}
+
+.favorite-game{
+    color: #a63536;
+    font-family: 'KanitLight';
+}
+
+.btn-register{
+    --background: #ffffff;
+    text-transform: none;
+    color: #a63536;
 }

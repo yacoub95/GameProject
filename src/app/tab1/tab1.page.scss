@@ -1,8 +1,61 @@
+.header-bg{
+    height: 175px;
+    width: 450px;
+    background: #e85b5c;
+    background: linear-gradient(90deg, #e85b5c 0%, #e96566 100%);
+    box-shadow: 0px 1px 10px #2f3542;
+    transform: rotate(-13deg);
+    border-radius: 10px 10px 10px 50px;
+    margin-left: -18px;
+    margin-top: -70px;
+    margin-bottom: 50px;
+}
+
+.header-content{
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+
+    img{
+        width: 50px;
+        height: 50px;
+        margin-right: 14px;
+    }
+
+    h2{
+        font-weight: 300;
+        font-size: 26px;
+        color: white;
+    }
+}
+
+.news-card{
+    border-radius: 25px;
+    box-shadow: 1px 2px 7px #ea7a7b;
+
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+.bar{
+    --ion-background-color: #e85b5c;
+    --ion-background-color: linear-gradient(90deg, #e85b5c 0%, #e96566 100%);
+    --border-width: 0px !important;
+    border: 0 !important;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
 .title{
     font-family: Antara;
     text-align: center;
-    font-size: 200%;
-    color: #1e90ff !important;
+    font-size: 230%;
+    color: #ffffff !important;
 }
 
 //Titre de la card actualité
@@ -12,11 +65,16 @@
 }
 .title-card a {
     text-decoration: none;
-    color: black
+    color: #a63536;
+    font-weight: 600;
 }
 
 
 .desc-card{
     font-size: small;
     color: #747d8c;
+}
+
+.news-title{
+    color: #a63536;
 }

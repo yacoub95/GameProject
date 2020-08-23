@@ -1,29 +1,30 @@
-.articles{
-    white-space: normal;
+//header
+.bar-exclusif{
+    --ion-background-color: #a63536;
+    --border-width: 0px !important;
+    border: 0 !important;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
-.astuces{
-    white-space: pre-line;
+//contenu verouillé
+.lock-icon{
+    color: #a63536;
 }
-
-.image{
-    width: 100%;
-    height: 100%;
-}
-
-.small-text{
-    font-size: small;
-}
-
 .lock{
     padding: 5%;
     text-align: center;
+    color: #a63536;
+}
+.lock-footer{
+    padding: 5%;
+    text-align: center;
+    color: #747d8c;
 }
 .logo {
     position: relative;
     height: 250px;
 }
-
 .lock-icon{
     font-size: 9em;
     position: absolute;
@@ -31,7 +32,72 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.icon-register{
+    color: #747d8c;
+}
 
 .send{
-    background-color: rgb(255, 255, 255);
+    background-color: transparent !important;
+    --border-width: 0px !important;
+    border: 0 !important;
+}
+
+//Segment de choix
+.segment-btn{
+   --padding-top: 5px;
+   --padding-bottom: 5px;
+   --color: #eaa5a5;
+   --color-checked: #e85b5c;
+   --indicator-height: 3px;
+
+}
+.segment-title{
+    text-align: center;
+    color: #a63536;
+}
+
+//Card des news
+.news-desc{
+    white-space: normal;
+    color: #ced6e0;
+    font-size: small;
+}
+.image{
+    width: 100%;
+    height: 100%;
+}
+.news-card{
+    --ion-background-color: linear-gradient(45deg,#ea7a7b, #e85b5c 80% );
+    border-radius: 15px;
+}
+.news-title{
+    white-space: normal;
+    color: #ecf0f1;
+}
+
+
+//Card des astuces
+.astuces{
+    white-space: pre-line;
+    color: #ecf0f1;
+    font-family: 'KanitLight';
+}
+.astuces-card{
+    --ion-background-color: linear-gradient(45deg,#e85b5c, #ea7a7b 80% );
+    //box-shadow: none;
+}
+.small-text{
+    font-size: small;
+    color: #747d8c;
+}
+.btn-partager{
+    color: #747d8c;
+}
+.btn-send{
+    --color: white;
+    --background: #e85b5c;
+}
+.btn-annuler{
+    --color: #a63536;
+    --border-color: #a63536;
 }

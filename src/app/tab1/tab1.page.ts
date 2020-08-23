@@ -6,6 +6,9 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
+
+//https://enappd-apps.gitbook.io/apps/ionic-4-full-app/startup-features/translation-multi-language
+
 export class Tab1Page {
   data : any;
   //sliderConfig = {

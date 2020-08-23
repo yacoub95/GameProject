@@ -62,9 +62,7 @@ export class Tab4Page implements OnInit {
   }
 
   createBarChart() {
-    let ctx = this.legendsUsage.nativeElement;
-    ctx.height = 350;
-    this.bars = new Chart(ctx, {
+    this.bars = new Chart(this.legendsUsage.nativeElement, {
       type: 'horizontalBar',
       data: {
         labels: ['Wraith', 'Pathfinder', 'Lifeline', 'Bloodhound', 'Bangalore', 'Octane', 'Revenant', 'Gibraltar', 'Caustic', 'Mirage', 'Loba', 'Wattson', 'Crypto'],
@@ -72,8 +70,8 @@ export class Tab4Page implements OnInit {
           barPercentage: 1,
           label: 'Utilisation en %',
           data: [12.4, 11.7, 10.6, 9.9, 8.6, 8.2, 6.8, 6.4, 6.4, 5.4, 4.9, 4.6, 4.2],
-          backgroundColor: 'rgba(112, 161, 255,1.0)', // array should have same number of elements as number of dataset
-          borderColor: 'rgba(112, 161, 255,1.0)',// array should have same number of elements as number of dataset
+          backgroundColor: 'rgb(234, 96, 97)', // array should have same number of elements as number of dataset
+          borderColor: 'rgb(234, 96, 97)',// array should have same number of elements as number of dataset
           borderWidth: 1
         }]
       },
@@ -95,9 +93,7 @@ export class Tab4Page implements OnInit {
   }
 
   createBarChart2() {
-    let ctx = this.legendsKPM.nativeElement;
-    ctx.height = 350;
-    this.bars2 = new Chart(ctx, {
+    this.bars2 = new Chart(this.legendsKPM.nativeElement, {
       type: 'pie',
       data: {
         labels: ['Wraith', 'Pathfinder', 'Lifeline', 'Bangalore', 'Wattson', 'Gibraltar', 'Mirage', 'Loba', 'Octane', 'Revenant', 'Bloodhound', 'Crypto', 'Caustic'],

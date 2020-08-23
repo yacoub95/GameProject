@@ -5,9 +5,11 @@ import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 import { AngularFirestore } from '@angular/fire/firestore';
-import { auth } from 'firebase';
+
 
 //https://fireship.io/lessons/angularfire-google-oauth/
+//https://www.positronx.io/ionic-firebase-authentication-tutorial-with-examples/
+//https://stackoverflow.com/questions/61824512/how-to-add-user-data-to-firestore-in-ionic-angular
 
 @Component({
   selector: 'app-register',
@@ -19,8 +21,9 @@ export class RegisterPage implements OnInit {
     id: this.firestore.createId(),
     email:'',
     password:'',
+    photoURL:'',
     username:'',
-    game:''
+    favoriteGame:''
   };
   userId : string;
   connected : boolean;
@@ -46,18 +49,20 @@ export class RegisterPage implements OnInit {
 
   async errorMail() {
     const toast = await this.toastController.create({
-      message: 'Email ou mot de passe incorrect',
+      message: 'Bizarre, il y a un problème',
       duration: 2000,
-      position: 'top'
+      position: 'top',
+      color: 'medium'
     });
     toast.present();
   }
 
   async GoodSignUp() {
     const toast = await this.toastController.create({
-      message: 'Bravo, vous êtes inscrit !',
+      message: 'Bravo, vous êtes inscrit à Zimyy !',
       duration: 2000,
-      position: 'top'
+      position: 'top',
+      color: 'medium'
     });
     toast.present();
   }
@@ -66,20 +71,23 @@ export class RegisterPage implements OnInit {
     this.afAuth.createUserWithEmailAndPassword(this.dataUser.email, this.dataUser.password)
     .then(auth => {
       console.log('utilisateur connecté');
+      this.firestore.collection('Users').add(this.dataUser);
+      this.dataUser = {
+        id : '',
+        email: '',
+        password:'',
+        photoURL: '',
+        username:'',
+        favoriteGame:''
+      };
+      this.router.navigate(['/tabs/tab5']);
       this.GoodSignUp();
     })
     .catch(err => {
       console.log('Erreur: ' + err);
       this.errorMail();
     });
-    this.firestore.collection('Users').add(this.dataUser);
-    this.dataUser = {
-      id : '',
-      email: '',
-      password: '',
-      username:'',
-      game:''
-    };
+    
   }
 
 

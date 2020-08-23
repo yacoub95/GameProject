@@ -11,9 +11,11 @@ import { Observable } from 'rxjs';
 import { SettingsPage } from '../settings/settings.page';
 import { RegisterPage} from '../register/register.page';
 
+
 //https://stackoverflow.com/questions/47206838/get-user-uid-from-firebase-via-service
 //https://www.positronx.io/send-verification-email-new-user-firebase-angular/
 //https://fireship.io/lessons/angularfire-google-oauth/
+//https://medium.com/@c_innovative/implementing-password-reset-can-be-a-tricky-but-inevitable-task-737badfb7bab
 
 @Component({
   selector: 'app-tab5',
@@ -71,6 +73,10 @@ export class Tab5Page implements OnInit {
       console.log('Erreur: ' + err);
       this.errorMail();
     });
+  }
+
+  logout() {
+    this.afAuth.signOut();
   }
 
   async errorMail() {

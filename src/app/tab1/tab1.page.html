@@ -1,5 +1,5 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar class="bar">
     <ion-title class="title">
       Zimyy
     </ion-title>
@@ -53,19 +53,24 @@
     </div>
   </div>-->
 
-
-  <ion-img src = "https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/apex-featured-image-16x9.jpg.adapt.crop191x100.1200w.jpg"></ion-img>
-
+  <div class="header-bg"></div>
+  <!--<ion-img src = "https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/apex-featured-image-16x9.jpg.adapt.crop191x100.1200w.jpg"></ion-img>-->
+  <div class="header-content">
+    <img src="../assets/logo-apex.png">
+    <ion-label>
+      <h2>Apex Legends</h2>
+    </ion-label>
+  </div>
 
   <ion-item lines="none">
     <ion-label class="ion-padding">
-      <h1><b>Actualités</b></h1>
+      <h1 class="news-title"><b>Actualités</b></h1>
     </ion-label>
   </ion-item>
 
   <!-- Carte d'actualités-->
   
-  <ion-card *ngFor = "let article of data?.articles">
+  <ion-card *ngFor = "let article of data?.articles" class="news-card">
     <img [src]="article.urlToImage"/>
     <ion-card-content>
       <ion-card-title class="title-card"><a href = {{article.url}}>

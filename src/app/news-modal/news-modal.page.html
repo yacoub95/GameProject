@@ -1,8 +1,8 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title><h6>{{ title }}</h6></ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar class="bar-modal">
+    <ion-title class="modal-title">{{ title }}</ion-title>
     <ion-buttons slot="end">
-      <ion-button color="dark" (click)="closeModal()">
+      <ion-button color="light" (click)="closeModal()">
         <ion-icon name="close-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -10,16 +10,21 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-card class="news-card">
     <img [src]= "image"/>
     <ion-card-header>
-      <ion-card-subtitle class="articles">{{ sousTitle }}</ion-card-subtitle>
-      <h6>{{ date }}</h6>
+      <ion-card-subtitle class="subtitle">{{ sousTitle }}</ion-card-subtitle>
+      <ion-item lines="none">
+        <ion-label class="date">Publié le: {{ date }}</ion-label>
+      </ion-item>
     </ion-card-header>
     <ion-card-content >
-      <pre>{{ article }}</pre>
+      <p class="article">{{ article }}</p>
     </ion-card-content>
-    <h6>{{ by }}</h6>
+    <ion-item lines="none">
+      <p class="by-first">by</p>
+      <ion-label class="by">{{ by }}</ion-label>
+    </ion-item>
   </ion-card>
   
 </ion-content>

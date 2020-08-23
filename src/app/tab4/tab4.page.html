@@ -1,8 +1,8 @@
-<ion-header>
+<!--<ion-header>
   <ion-toolbar>
     <ion-title class="ion-text-center">Apex</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header>-->
 
 <ion-content>
 
@@ -18,7 +18,7 @@
     </ion-card-content>
   </ion-card>-->
 
-  <ion-button color="primary" expand="block" (click)="choix()">Découvrir</ion-button>
+  <!--<ion-button color="primary" expand="block" (click)="choix()">Découvrir</ion-button>
 
   <div [ngSwitch]="selectSegment">
     <ion-list *ngSwitchCase="'desc'">
@@ -73,7 +73,30 @@
           <ion-icon name="construct-outline" slot="end" color="dark"></ion-icon>
         </ion-item>
       </ion-list>
-  </div>
+  </div>-->
+
+  <ion-item lines="none">
+    <ion-label class="ion-padding">
+      <h1 class="stats-title"><b>Statistiques globales</b></h1>
+    </ion-label>
+  </ion-item>
+  <!--<ion-button *ngIf="graph" expand="block" color="dark" (click)="displayGraphs()">Afficher les graphiques</ion-button>-->
+  <ion-card class="stats-card">
+    <ion-card-header>
+      <ion-card-title class="card-title">Utilisation des légendes</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #legendsUsage height="350"></canvas>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="stats-card">
+    <ion-card-header>
+      <ion-card-title class="card-title">Frags par partie des légendes</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #legendsKPM height="350"></canvas>
+    </ion-card-content>
+  </ion-card>
 
 
 </ion-content>

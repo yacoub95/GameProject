@@ -1,6 +1,6 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title class="ion-text-center">
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar class="bar-exclusif">
+    <ion-title class="ion-text-center" color="light">
       Contenu Exclusif
     </ion-title>
     
@@ -15,9 +15,9 @@
   </ion-header>-->
   <div *ngIf="!connected">
 
-      <h3 class="lock">Contenu verrouillé</h3>
-      <ion-icon name="lock-closed-outline" class="lock-icon"></ion-icon>
-    
+    <h3 class="lock"><b>Contenu verrouillé</b></h3>
+    <ion-icon name="lock-closed-outline" class="lock-icon"></ion-icon>
+
   </div>
 
 <div *ngIf="connected">
@@ -49,13 +49,14 @@
   </div>
 
   <ion-segment [(ngModel)]="selectSegment">
-    <ion-segment-button value="astuces">
+    <ion-segment-button value="astuces" class="segment-btn">
       <ion-icon name="bulb-outline"></ion-icon>
     </ion-segment-button>
-    <ion-segment-button value="news">
+    <ion-segment-button value="news" class="segment-btn">
       <ion-icon name="newspaper-outline"></ion-icon>
     </ion-segment-button>
   </ion-segment>
+
   <div [ngSwitch]="selectSegment">
 
 
@@ -63,7 +64,7 @@
       <div class="ion-padding">
         <ion-item lines="none">
           <ion-label>
-            <h1  class="ion-text-center"><b>Astuces</b></h1>
+            <h1 class="segment-title"><b>Astuces</b></h1>
           </ion-label>
         </ion-item>
         <ion-item lines="none" *ngIf="connected">
@@ -71,8 +72,8 @@
             <h5 class="small-text">Vous avez une astuce à partager ?</h5>
           </ion-label>
           <ion-buttons slot="end">
-            <ion-button color="dark" (click)="send()" expand="block">
-                <ion-icon name="send-outline"></ion-icon>
+            <ion-button class="btn-partager" (click)="send()" expand="block">
+                <ion-icon slot="icon-only" name="send-outline"></ion-icon>
             </ion-button>
           </ion-buttons>
         </ion-item>
@@ -83,14 +84,14 @@
           </ion-label>
           <ion-buttons slot="end">
             <ion-button color="dark" expand="block" routerLink="/tabs/tab5">
-              <ion-icon name="arrow-forward-outline"></ion-icon>
+              <ion-icon slot="icon-only" name="arrow-forward-outline"></ion-icon>
             </ion-button>
           </ion-buttons>
         </ion-item>
       </div>
 
-      <ion-card>
-        <ion-item *ngFor="let item of astuces | async" lines="none">
+      <ion-card *ngFor="let item of astuces | async" class="astuces-card">
+        <ion-item lines="none">
           <ion-label><h5 class="astuces">{{ item.text }}</h5></ion-label>
         </ion-item>
       </ion-card>
@@ -100,15 +101,15 @@
     <ion-list *ngSwitchCase="'news'">
       <ion-item lines="none">
         <ion-label class="ion-padding">
-          <h1 class="ion-text-center"><b>Nos news</b></h1>
+          <h1 class="segment-title"><b>Nos news</b></h1>
         </ion-label>
       </ion-item>
 
-      <ion-card *ngFor="let item of ourNews | async" (click)="openNewsModal(item.id, item.title, item.sousTitle, item.article, item.date, item.by, item.desc, item.image)" >
+      <ion-card *ngFor="let item of ourNews | async" class="news-card" (click)="openNewsModal(item.id, item.title, item.sousTitle, item.article, item.date, item.by, item.desc, item.image)" >
         <img [src]="item.image" class="image" >
         <ion-card-header>
-          <ion-card-title>{{ item.title }}</ion-card-title>
-          <ion-card-subtitle class="articles">{{ item.desc }}</ion-card-subtitle>
+          <ion-card-title class="news-title">{{ item.title }}</ion-card-title>
+          <ion-card-subtitle class="news-desc">{{ item.desc }}</ion-card-subtitle>
         </ion-card-header>
       </ion-card>
     </ion-list>
@@ -124,7 +125,7 @@
       <ion-input [(ngModel)]="newsData.title" type="text" placeholder="Titre"></ion-input>
       <ion-input [(ngModel)]="newsData.sousTitle" type="text" placeholder="Sous-Titre"></ion-input>
       <ion-input [(ngModel)]="newsData.desc" type="text" placeholder="Description"></ion-input>
-        <ion-textarea [(ngModel)]="newsData.article" type="text" placeholder="Article"></ion-textarea>
+      <ion-textarea [(ngModel)]="newsData.article" type="text" placeholder="Article"></ion-textarea>
       <ion-input [(ngModel)]="newsData.date" type="text" placeholder="Date"></ion-input>
       <ion-input [(ngModel)]="newsData.by" type="text" placeholder="Auteur"></ion-input>
       <ion-input [(ngModel)]="newsData.image" type="text" placeholder="Image"></ion-input>
@@ -158,27 +159,28 @@
 </ion-footer>
 
 
-<ion-footer class="send" *ngIf="showSend">
+<ion-footer class="send" *ngIf="showSend" class="ion-no-border">
   <ion-card>
     <ion-item lines="none">
-      <ion-label position="floating">Astuce</ion-label>
+      <!--<ion-label position="floating">Astuce</ion-label>-->
       <ion-input [(ngModel)]="suggestionAstuce" type="text" placeholder="Entrez votre astuce"></ion-input>
     </ion-item>
-    <ion-button expand="block" color="secondary" (click)="sendSuggestionAstuce()">Envoyer</ion-button>
+    <ion-button expand="block" class="btn-send" size="large" (click)="sendSuggestionAstuce()">Envoyer</ion-button>
+    <ion-button class="btn-annuler" expand="block" (click)="send()" fill="outline">
+      Annuler
+      <ion-icon name="close" slot="start"></ion-icon>
+    </ion-button>
   </ion-card>
 
-  <ion-button (click)="send()" expand="block" fill="outline" color="danger">
-    Annuler
-    <ion-icon name="close" slot="start"></ion-icon>
-  </ion-button>
+  
 </ion-footer>
 
 <div *ngIf="!connected">
   <ion-footer>
     <ion-item lines="none">
-      <h6 class="lock">Connectez-vous pour accéder à notre contenu exclusif.</h6>
+      <h6 class="lock-footer">Connectez-vous pour accéder à notre contenu exclusif.</h6>
       <ion-buttons slot="end">
-          <ion-button color="dark" expand="block" routerLink="/tabs/tab5">
+          <ion-button class="icon-register" expand="block" routerLink="/tabs/tab5">
             <ion-icon name="arrow-forward-outline"></ion-icon>
           </ion-button>
       </ion-buttons>

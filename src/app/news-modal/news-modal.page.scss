@@ -1,0 +1,58 @@
+ion-content{
+    --ion-background-color: #e85b5c;
+}
+
+//header
+.bar-modal{
+    --ion-background-color: #e85b5c;
+    --border-width: 0px !important;
+    border: 0 !important;
+}
+
+.news-card{
+    --ion-background-color: white;
+    border-radius: 10px;
+}
+
+.modal-title{
+    white-space: pre-line;
+    font-size: medium;
+    color: white;
+
+}
+
+.subtitle{
+    font-weight: bold;
+    color: #a63536;
+    font-size: medium;
+    white-space: pre-line;
+}
+
+.date{
+    color: #e85b5c;
+    font-size: small;
+}
+
+.article{
+    white-space: pre-line;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: medium;
+    font-family: 'KanitLight';
+    color: #747d8c;
+}
+
+.by-first{
+    color: #747d8c;
+    padding-right: 5px;
+    font-size: small;
+    font-weight: bold;
+    font-family: 'KanitLight';
+}
+
+.by{
+    color: #e85b5c;
+    font-size: small;
+    font-weight: bold;
+    font-family: 'KanitLight';
+}

@@ -1,13 +1,17 @@
-<ion-header [translucent]="true">
+<!--<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
       Videos
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header>-->
 
 <ion-content>
-  <ion-text><h1 align = "center">Présentation du jeu</h1></ion-text>
+  <ion-item lines="none">
+    <ion-label class="categorie">
+      <h1 class="vid-title"><b>Officiel et aide</b></h1>
+    </ion-label>
+  </ion-item>
   <!-- Cartes vidéo -->
   <ion-slides [options] = "slideOpts">
     <ion-slide *ngFor = "let video of items">
@@ -18,7 +22,11 @@
   </ion-slides>
     <!-- Fin du modèle-->
 
-  <ion-text><h1 align = "center">Skills</h1></ion-text>
+  <ion-item lines="none">
+    <ion-label class="categorie">
+      <h1 class="vid-title"><b>Skills</b></h1>
+    </ion-label>
+  </ion-item>
   <ion-slides [options] = "slideOpts">
     <ion-slide *ngFor = "let video of items1">
       <ion-card (click) = "videomodal(video.url)">
@@ -27,8 +35,12 @@
     </ion-slide>
   </ion-slides>
 
-    <ion-text><h1 align = "center">Fun</h1></ion-text>
-    <ion-slides [options] = "slideOpts">
+  <ion-item lines="none">
+    <ion-label class="categorie">
+      <h1 class="vid-title"><b>Fun</b></h1>
+    </ion-label>
+  </ion-item>
+  <ion-slides [options] = "slideOpts">
       <ion-slide *ngFor = "let video of items2">
         <ion-card (click) = "videomodal(video.url)">
           <ion-img [src]="video.images" alt=""></ion-img>

@@ -1,11 +1,12 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title class="ion-text-center">Profil</ion-title>
-    <ion-buttons slot="end">
-      <ion-button color="dark" (click)="openSettings()">
+<ion-header class="ion-no-border">
+  <ion-toolbar class="bar">
+    <div *ngIf="!connected"><ion-title class="login-title">Connexion</ion-title></div>
+    <div *ngIf="connected"><ion-title class="compte">Votre compte</ion-title></div>
+    <!--<ion-buttons slot="end">
+      <ion-button class="settings" (click)="openSettings()">
         <ion-icon name="menu-outline"></ion-icon>
       </ion-button>
-    </ion-buttons>
+    </ion-buttons>-->
   </ion-toolbar>
 </ion-header>
 
@@ -25,7 +26,7 @@
     </ion-item>
   </div>
 
-  <ion-item lines="none">
+  <!--<ion-item lines="none">
     <ion-label>
       <h1 class="pseudo"><b>Coubsi95</b></h1>
     </ion-label>
@@ -38,13 +39,43 @@
       <h3><b>Codeurs et gameurs</b></h3>
       <p>Apex legends</p>
     </ion-label>
-  </ion-item>
-  <ion-item>
+  </ion-item>-->
+
+  <ion-item lines="none">
     <ion-label>
-      <p>Identifiant</p>
-      <h2><b>{{ userId }}</b></h2>
+      <p class="info-text">Votre identifiant</p>
+      <h2 class="info"><b>{{ userId }}</b></h2>
     </ion-label>
   </ion-item>
+  <ion-item lines="none">
+    <ion-label>
+      <p class="info-text">Votre email</p>
+      <h2  class="info"><b>{{ mail }}</b></h2>
+    </ion-label>
+  </ion-item>
+  <!--<ion-item>
+    <ion-label>
+      <p>Votre méthode de connexion</p>
+      <h2><b>{{ method }}</b></h2>
+    </ion-label>
+  </ion-item>-->
+
+
+  <ion-card routerLink="/tabs/tab2" class="card-info">
+    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="image" >
+    <ion-card-header>
+      <ion-card-title class="title-info">Contenu exclusif Zimyy</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content class="text-info">
+      Nous ajoutons souvent de nouvelles astuces et news.
+      N'hésites donc pas à les consulter !
+    </ion-card-content>
+  </ion-card>
+
+  <div class="ion-padding">
+      <ion-button class="btn-logout" expand="block" fill="solid" (click)="logout()">Déconnexion</ion-button>
+  </div>
   
 </div>
 
@@ -55,16 +86,16 @@
 
   <ion-item>
     <ion-label>
-      <h2><b>Bienvenue dans l'espace membre</b></h2>
-      <h5>Connectez-vous pour accéder à votre profil.</h5>
+      <h2 class="bienvenue"><b>Bienvenue dans l'espace membre</b></h2>
+      <h5 class="join">Connectez-vous pour accéder à votre profil.</h5>
     </ion-label>
-    <ion-icon name="game-controller-outline" color="dark"></ion-icon>
+    <ion-icon name="game-controller-outline" class="icon-join"></ion-icon>
   </ion-item>
 
 <div class="padding">
   <div class="padding2">
-  <ion-item lines="none" >
-    
+    <br>
+  <ion-item lines="none">
     <ion-input type="email" placeholder="Adresse email" [(ngModel)]="dataUser.email" autocomplete></ion-input>
   </ion-item>
   </div>
@@ -76,16 +107,17 @@
     <ion-input type="password" placeholder="Mot de passe" [(ngModel)]="dataUser.password" clear-input ></ion-input>
   </ion-item>
 
-  <ion-item lines="none">
+  <!--<ion-item lines="none">
     <ion-button color="dark" slot="end" fill="clear">Mot de passe oublié ?</ion-button>
-  </ion-item>
+  </ion-item>-->
 
   <br>
 
-  <ion-button color="tertiary" expand="block" (click)="login()">Connexion</ion-button>
+  <ion-button class="btn-login" expand="block" (click)="login()">Connexion</ion-button>
 
-  <br>
+  <!--<br>
 
+  
   <ion-item lines="none">
     <ion-label class="ion-text-center">Ou connectez-vous avec</ion-label>
   </ion-item>
@@ -99,7 +131,7 @@
       <ion-icon slot="start" name="logo-google"></ion-icon>
       Google
     </ion-button>
-  </div>
+  </div>-->
     
 </div>
 
@@ -107,7 +139,7 @@
     <ion-label >
       <h5 class="sign">Vous n'avez pas de compte ?</h5>
     </ion-label>
-    <ion-button color="medium" slot="end" fill="clear" routerLink="/register">Inscrivez-vous</ion-button>
+    <ion-button class="btn-sign" color="medium" slot="end" fill="clear" routerLink="/register">Inscrivez-vous</ion-button>
   </ion-item>
 </div>
 

@@ -1,19 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tab5"></ion-back-button>
+<ion-header class="ion-no-border">
+  <ion-toolbar  class="bar-register">
+    <ion-buttons slot="start" class="icon-register">
+      <ion-back-button defaultHref="/tabs/tab5"></ion-back-button>
     </ion-buttons>
-    <ion-title>Inscription</ion-title>
+    <ion-title class="register-title">Inscription</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="dark">
+<ion-content>
   <div class="padding">
+    <ion-title class="title">
+      Zimyy
+    </ion-title>
     <div class="padding2">
-    <ion-card>
+
+    <ion-card class="register-card">
 
     <ion-item lines="none">
-      <ion-input type="username" placeholder="Pseudo" [(ngModel)]="dataUser.username" clear-input value="clear me"></ion-input>
+      <ion-input type="username" placeholder="Pseudo" [(ngModel)]="dataUser.username"></ion-input>
     </ion-item>
 
     <ion-item lines="none">
@@ -22,21 +26,25 @@
 
     <ion-item lines="none">
       <ion-input type="password" placeholder="Mot de passe" [(ngModel)]="dataUser.password" clear-input></ion-input>
-      <ion-icon slot="end" name="eye"></ion-icon>
+      <!--<ion-icon slot="end" name="eye"></ion-icon>-->
     </ion-item>
 
     </ion-card>
+
     </div>
     
-    <ion-card>
+    <ion-card class="register-card">
       <ion-item lines="none">
-        <ion-label position="stacked">Quel est votre jeu préféré ?</ion-label>
-        <ion-input [(ngModel)]="dataUser.game"></ion-input>
+        <ion-label class="favorite-game">Quel est votre jeu préféré ?</ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-input [(ngModel)]="dataUser.favoriteGame"></ion-input>
       </ion-item>
     </ion-card>
 
     <br>
 
-    <ion-button [routerLink]="['/tab5']" color="primary" expand="block" (click)="signUp()">Inscription</ion-button>
+    <ion-button class="btn-register" expand="block" (click)="signUp()">Inscription</ion-button>
   </div>
 </ion-content>

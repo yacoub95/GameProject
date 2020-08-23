@@ -1,8 +1,22 @@
+.settings{
+   color: #747d8c;
+}
 
 .sign{
     font-size: small;
+    color: #a63536;
+    font-family: 'KanitLight';
 }
 
+.btn-sign{
+    font-family: 'KanitLight';
+    font-weight: bold;
+}
+
+.compte{
+    color: #a63536;
+    text-align: center;
+}
 
 .padding{
     padding: 5%;
@@ -22,4 +36,56 @@
     font-size: 30px;
 }
 
+.info-text{
+    color: #a63536;
+}
+.info{
+    color: #747d8c;
+    font-family: 'KanitLight';
+}
 
+//Login
+.btn-login{
+    --background: #a63536;
+    text-transform: none;
+    color: #ffffff;
+}
+.login-title{
+    color: #a63536;
+    text-align: center;
+}
+.bienvenue{
+    color: #a63536;
+}
+.join{
+    color: #e85b5c;
+    font-family: 'KanitLight';
+}
+.icon-join{
+    color: #a63536;
+}
+
+
+//contenu exclusif deverouille
+.image{
+    width: 100%;
+    height: 100%;
+}
+.card-info{
+    border-radius: 15px;
+}
+.title-info{
+    color: #a63536;
+}
+.text-info{
+    color: #747d8c;
+    font-family: 'KanitLight';
+}
+
+//logout
+.btn-logout{
+    --background: #a63536;
+    text-transform: none;
+    color: #ffffff;
+    border-radius: 30px;
+}
