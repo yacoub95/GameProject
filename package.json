@@ -1,8 +1,8 @@
 {
   "name": "GameProject",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Yacoub Sidane",
+  "homepage": "https://google.com/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
