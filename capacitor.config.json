@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "GameProject",
+  "appId": "com.coubsi.zimyy",
+  "appName": "Zimyy",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

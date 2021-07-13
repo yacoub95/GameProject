@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.coubsi.zimyy;
 
 import android.os.Bundle;
 
