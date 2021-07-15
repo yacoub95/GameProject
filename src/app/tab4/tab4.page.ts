@@ -65,11 +65,11 @@ export class Tab4Page implements OnInit {
     this.bars = new Chart(this.legendsUsage.nativeElement, {
       type: 'horizontalBar',
       data: {
-        labels: ['Wraith', 'Pathfinder', 'Lifeline', 'Bloodhound', 'Bangalore', 'Octane', 'Revenant', 'Gibraltar', 'Caustic', 'Mirage', 'Loba', 'Wattson', 'Crypto'],
+        labels: ['Lifeline', 'Wraith', 'Octane', 'Bloodhound', 'Pathfinder', 'Bangalore', 'Valkyrie', 'Revenant', 'Gibraltar', 'Loba', 'Horizon', 'Mirage', 'Caustic', 'Wattson', 'Crypto', 'Fuse', 'Rampart'],
         datasets: [{
           barPercentage: 1,
           label: 'Utilisation en %',
-          data: [12.4, 11.7, 10.6, 9.9, 8.6, 8.2, 6.8, 6.4, 6.4, 5.4, 4.9, 4.6, 4.2],
+          data: [14.6, 13.5, 13.1, 11.1, 9.7, 7.2, 5.1, 4.5, 4.4, 3.3, 2.9, 2.7, 2.1, 1.6, 1.5, 1.5, 1.1],
           backgroundColor: 'rgb(234, 96, 97)', // array should have same number of elements as number of dataset
           borderColor: 'rgb(234, 96, 97)',// array should have same number of elements as number of dataset
           borderWidth: 1
@@ -96,9 +96,9 @@ export class Tab4Page implements OnInit {
     this.bars2 = new Chart(this.legendsKPM.nativeElement, {
       type: 'pie',
       data: {
-        labels: ['Wraith', 'Pathfinder', 'Lifeline', 'Bangalore', 'Wattson', 'Gibraltar', 'Mirage', 'Loba', 'Octane', 'Revenant', 'Bloodhound', 'Crypto', 'Caustic'],
+        labels: ['Wraith', 'Pathfinder', 'Horizon', 'Bangalore', 'Lifeline', 'Mirage', 'Gibraltar', 'Valkyrie', 'Loba', 'Octane', 'Wattson', 'Crypto', 'Bloodhound', 'Revenant', 'Caustic', 'Rampart', 'Fuse'],
         datasets: [{
-          data: [2.9, 2.6, 2.4, 2.2, 1.8, 1.8, 1.8, 1.7, 1.7, 1.4, 1.4, 1.3, 1.3],
+          data: [3.6, 3.6, 3.5, 3.4, 3.3, 3.2, 3.1, 3.1, 2.8, 2.7, 2.7, 2.4, 2.3, 2.3, 2.2, 1.5, 0],
           backgroundColor: [
             'rgba(87, 75, 144,1.0)',
             'rgba(30, 144, 255,1.0)',
@@ -112,7 +112,10 @@ export class Tab4Page implements OnInit {
             'rgba(231, 76, 60,1.0)',
             'rgba(235, 59, 90,1.0)',
             'rgba(38, 222, 129,1.0)',
-            'rgba(39, 174, 96,1.0)'
+            'rgba(39, 174, 96,1.0)',
+            'rgba(136, 84, 208,1.0)',
+            'rgba(149, 175, 192,1.0)',
+            'rgba(75, 101, 132,1.0)'
         ], // array should have same number of elements as number of dataset
           //borderColor: 'rgba(112, 161, 255,1.0)',// array should have same number of elements as number of dataset
           borderWidth: 0

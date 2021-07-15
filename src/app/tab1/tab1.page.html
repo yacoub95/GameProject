@@ -70,8 +70,8 @@
 
   <!-- Carte d'actualités-->
   
-  <ion-card *ngFor = "let article of data?.articles" class="news-card">
-    <img [src]="article.urlToImage"/>
+  <ion-card *ngFor = "let article of data?.articles" class="news-card" href = {{article.url}}>
+    <img *ngIf="!!article.urlToImage" [src]="article.urlToImage"/>
     <ion-card-content>
       <ion-card-title class="title-card"><a href = {{article.url}}>
         {{article.title}}
